@@ -10,8 +10,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight=".9"
+        android:layout_height="0dp"
+        android:layout_weight=".1"
         android:orientation="horizontal"
         android:padding="10dp"
         android:paddingBottom="10dp"
@@ -30,25 +30,35 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight=".1"
+        android:layout_height="0dp"
+        android:layout_weight=".6"
         android:orientation="vertical"
         android:padding="40dp">
         <Button
+            android:id="@+id/activity_main_agenda_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="agenda"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:onClick="agendaBtn"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="expediente"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:onClick="expedientBtn"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="citas"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:onClick="citasBtn"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".2">
+
     </LinearLayout>
 
 </LinearLayout>

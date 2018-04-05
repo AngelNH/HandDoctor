@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_Agenda"></activity>
+        <activity android:name=".ActivityAgenda" />
+        <activity android:name=".ActivityExpedient" />
+        <activity android:name=".ActivityCitas"></activity>
     </application>
 
 </manifest>

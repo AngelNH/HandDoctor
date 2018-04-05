@@ -40,19 +40,23 @@
             android:layout_height="wrap_content"
             android:text="agenda"
             android:layout_marginTop="10dp"
-            android:onClick="agendaBtn"/>
+            android:onClick="agendaBtn"
+            android:backgroundTint="@color/colorPrimary"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="expediente"
             android:layout_marginTop="10dp"
-            android:onClick="expedientBtn"/>
+            android:onClick="expedientBtn"
+            android:backgroundTint="@color/colorPrimary"
+            />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="citas"
             android:layout_marginTop="10dp"
-            android:onClick="citasBtn"/>
+            android:onClick="citasBtn"
+            android:backgroundTint="@color/colorPrimary"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

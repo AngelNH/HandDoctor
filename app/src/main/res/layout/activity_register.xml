@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.iteso.handdoctor.ActivityRegister"
+    android:padding="10dp"
+    android:layout_marginTop="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textRegister"
+        android:layout_gravity="center"
+        android:textSize="30sp"/>
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/textName"/>
+
+    <EditText
+        android:id="@+id/lastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/textLastName"/>
+    <EditText
+        android:id="@+id/expedient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/textExpedient"
+        android:inputType="number"/>
+    <EditText
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/textMail"
+        android:inputType="textEmailAddress"/>
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/textNumber"
+        android:inputType="phone"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+        <RadioButton
+            android:id="@+id/rbtnUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkUser"/>
+        <RadioButton
+            android:id="@+id/rbtnDoctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkDoctor"/>
+        <RadioButton
+            android:id="@+id/rbtnSecretary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkSecretary"/>
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnRegister"
+        android:layout_gravity="center_horizontal"
+        android:onClick="signInBtn"/>
+
+
+
+
+</LinearLayout>

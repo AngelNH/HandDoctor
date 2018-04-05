@@ -29,6 +29,10 @@ public class ActivityExpedient extends AppCompatActivity {
         pacientes.add(new Paciente(2,"Rocio Hernández"));
         pacientes.add(new Paciente(3,"Ulises Arturo"));
         pacientes.add(new Paciente(4,"Edith Gonzalez"));
+        pacientes.add(new Paciente(5,"Martha Arreguin"));
+        pacientes.add(new Paciente(6,"Leo Nuño"));
+        pacientes.add(new Paciente(7,"Victoria Sanchez"));
+        pacientes.add(new Paciente(8,"Miguel Gonzalez"));
         //************************
         AdapterPaciente adapter = new AdapterPaciente(this,pacientes);
         listView.setAdapter(adapter);

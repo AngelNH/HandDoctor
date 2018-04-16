@@ -1,3 +1,37 @@
 <resources>
+
+    <!--//Inicio de Sesión-->
     <string name="app_name">HandDoctor</string>
+    <string name="textUser">User</string>
+    <string name="textPass">Password</string>
+    <string name="textIn">Type here</string>
+    <string name="btnIn">Log In</string>
+    <string name="textRegister">Sign In</string>
+
+    <!--Registro-->
+    <string name="textTitle1">Register</string>
+    <string name="textName">Name</string>
+    <string name="textLastName">LastName</string>
+    <string name="textExpedient">Expedient</string>
+    <string name="textMail">E-Mail</string>
+    <string name="textNumber">Phone</string>
+    <string name="btnRegister">Sign in</string>
+    <string name="checkDoctor">Doctor</string>
+    <string name="checkSecretary">Secretary</string>
+    <string name="checkUser">Pacient</string>
+
+
+    <!--Presentacion Splash-->
+    <string name="startApp">¡¡ Welcome !!</string>
+
+
+    <string name="title_activity_main">ActivityMain</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

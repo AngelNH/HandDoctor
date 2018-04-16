@@ -9,14 +9,19 @@
         android:roundIcon="@drawable/hand_doctor_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityMain">
+        <activity android:name=".ActivityMain" />
+        <activity android:name=".ActivityAgenda" />
+        <activity android:name=".ActivityExpedient" />
+        <activity android:name=".ActivityCitas" />
+        <activity android:name=".ActivitySplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_Agenda"></activity>
+        <activity android:name=".ActivityLogin" />
+        <activity android:name=".ActivityRegister"></activity>
     </application>
 
 </manifest>

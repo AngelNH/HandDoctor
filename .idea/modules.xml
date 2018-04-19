@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HandDoctor.iml" filepath="$PROJECT_DIR$/HandDoctor.iml" />
+      <module fileurl="file://C:\Users\LjorgeGuerra\Desktop\HandDoctor-master\HandDoctor-master\HandDoctor.iml" filepath="C:\Users\LjorgeGuerra\Desktop\HandDoctor-master\HandDoctor-master\HandDoctor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HandDoctor-master.iml" filepath="$PROJECT_DIR$/HandDoctor-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

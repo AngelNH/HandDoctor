@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.iteso.handdoctor.ActivityMedical"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:scrollbars="vertical"
+    android:scrollbarStyle="insideInset">
+
+
+            <!--<EditText-->
+            <!--android:id="@+id/activity_medical_edt_name"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="@string/name"/>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gender"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <RadioButton
+                    android:id="@+id/activity_medical_rdb_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/female" />
+                <RadioButton
+                    android:id="@+id/activity_medical_rdb_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male"/>
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/activity_medical_edt_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/age"/>
+            <EditText
+                android:id="@+id/activity_medical_edt_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/region"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/medicament"
+                android:textSize="20sp"
+                android:paddingTop="30dp"
+                android:gravity="center"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <RadioButton
+                    android:id="@+id/activity_medical_rdb_yesMedicament"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rbtnYes"/>
+                <RadioButton
+                    android:id="@+id/activity_medical_rdb_noMedicament"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rbtnNo"/>
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/activity_medical_edt_medicament"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/whichMedicament"
+                android:gravity="center"
+                android:paddingBottom="50dp" />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chronic"
+                android:textSize="20sp"
+                android:paddingTop="30dp"
+                android:gravity="center"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <RadioButton
+                    android:id="@+id/activity_medical_rdb_yesDisease"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rbtnYes"/>
+                <RadioButton
+                    android:id="@+id/activity_medical_rdb_noDisease"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rbtnNo"/>
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/activity_medical_edt_chronic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/whichChronic"
+                android:gravity="center"
+                android:paddingBottom="50dp" />
+            <!--<EditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="@string/whichChronic"-->
+            <!--android:gravity="center"-->
+            <!--android:paddingBottom="50dp" />-->
+
+
+    <Button
+        android:id="@+id/activity_medical_btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/btnSend"/>
+
+
+
+</LinearLayout>

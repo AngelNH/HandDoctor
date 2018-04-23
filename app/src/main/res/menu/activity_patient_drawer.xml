@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/activity_nav_citasMedicas"
+            android:icon="@drawable/citas_default"
+            android:title="Citas Médicas" />
+        <item
+            android:id="@+id/activity_nav_medicamentos"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Medicamentos" />
+        <item
+            android:id="@+id/activity_nav_medicalPreview"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Cuestionario médico" />
+        <item
+            android:id="@+id/activity_nav_chat"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Chat" />
+    </group>
+
+    <item >
+        <menu>
+            <item
+                android:id="@+id/activity_nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Recordatorios" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Ajustes" />
+        </menu>
+    </item>
+
+</menu>

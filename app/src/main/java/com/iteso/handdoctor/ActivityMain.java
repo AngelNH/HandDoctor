@@ -44,7 +44,8 @@ public class ActivityMain extends AppCompatActivity {
         startActivity(intent);
     }
     void citasBtn(View v){
-        Intent intent = new Intent(ActivityMain.this,ActivityCitas.class);
+        Intent intent = new Intent(ActivityMain.this,ActivityRegister.class);
+        //Intent intent = new Intent(ActivityMain.this,ActivityCitas.class);
         startActivity(intent);
     }
 }

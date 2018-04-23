@@ -57,12 +57,22 @@
             android:layout_marginTop="10dp"
             android:onClick="citasBtn"
             android:backgroundTint="@color/colorPrimary"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".2">
 
+        <Button
+            android:id="@+id/custom_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="navigationView"
+             />
     </LinearLayout>
+
+        <android.support.design.widget.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/special_cases"
+            app:menu="@menu/activity_main_bottom_navigation"/>
+
+
 
 </LinearLayout>

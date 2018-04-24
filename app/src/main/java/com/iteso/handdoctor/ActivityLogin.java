@@ -14,7 +14,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     public void logInBtn(View view){
-        Intent intent = new Intent(ActivityLogin.this,ActivityMain.class);
+        Intent intent = new Intent(ActivityLogin.this,ActivityPatient.class);
         startActivity(intent);
         finish();
     }

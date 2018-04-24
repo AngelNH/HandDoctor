@@ -3,9 +3,26 @@ package com.iteso.handdoctor.beans;
 
 public class Medicamento {
     private String name;
+    private int mg;
     private int cantidad;
-    private String mg;
     private int dias;
+
+    public Medicamento(String name, int cantidad, int mg, int dias) {
+        this.name = name;
+        this.cantidad = cantidad;
+        this.mg = mg;
+        this.dias = dias;
+    }
+
+    @Override
+    public String toString() {
+        return "Medicamento{" +
+                "name='" + name + '\'' +
+                ", cantidad=" + cantidad +
+                ", mg='" + mg + '\'' +
+                ", dias=" + dias +
+                '}';
+    }
 
     public String getName() {
         return name;
@@ -23,11 +40,11 @@ public class Medicamento {
         this.cantidad = cantidad;
     }
 
-    public String getMg() {
+    public int getMg() {
         return mg;
     }
 
-    public void setMg(String mg) {
+    public void setMg(int mg) {
         this.mg = mg;
     }
 
@@ -39,10 +56,5 @@ public class Medicamento {
         this.dias = dias;
     }
 
-    public Medicamento(String name, int cantidad, String mg, int dias) {
-        this.name = name;
-        this.cantidad = cantidad;
-        this.mg = mg;
-        this.dias = dias;
-    }
+
 }

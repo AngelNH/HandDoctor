@@ -21,7 +21,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityLogin" />
-        <activity android:name=".ActivityRegister"></activity>
+        <activity android:name=".ActivityRegister" />
+        <activity android:name=".ActivityMedical" />
+        <activity
+            android:name=".ActivityPatient"
+            android:label="@string/title_activity_patient"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ActivityMedicamento" />
+        <activity android:name=".Activity_citas_paciente" />
+        <activity android:name=".ActivityChat" />
+        <activity android:name=".ActivityMedicamentos"></activity>
     </application>
 
 </manifest>

@@ -7,17 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import com.iteso.handdoctor.R;
 import com.iteso.handdoctor.beans.CitasPaciente;
+
 import java.util.ArrayList;
 
 public class AdapterCitasPacientes extends BaseAdapter {
     protected Activity activity;
     protected ArrayList<CitasPaciente> citasPacientes;
 
-    private TextView doctor;
+    private TextView nombreDoctor;
     private TextView fecha;
-    private TextView lugar;
+    private TextView lat;
+    private TextView lon;
     private TextView especialidad;
     private TextView hora;
 
@@ -58,15 +61,14 @@ public class AdapterCitasPacientes extends BaseAdapter {
             v = inflater.inflate(R.layout.citaspaciente_items,null);
         }
 
+
         CitasPaciente cp = citasPacientes.get(pos);
-        doctor = v.findViewById(R.id.doctor_label);
-        doctor.setText(cp.getNombreDoctor());
+        nombreDoctor = v.findViewById(R.id.doctor_label);
+        nombreDoctor.setText(cp.getNombreDoctor());
         fecha = v.findViewById(R.id.fecha_label);
         fecha.setText(cp.getFecha());
         hora = v.findViewById(R.id.hora_label);
         hora.setText(cp.getHora());
-        lugar=v.findViewById(R.id.lugar_label);
-        lugar.setText(cp.getLugar());
         especialidad=v.findViewById(R.id.especialidad_label);
         especialidad.setText(cp.getEspecialidad());
         return v;

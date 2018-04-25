@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 import com.iteso.handdoctor.beans.Medicamento;
 import com.iteso.handdoctor.utils.AdapterMedicamento;
+
 import java.util.ArrayList;
 
 public class ActivityMedicamento extends AppCompatActivity {
@@ -15,16 +17,15 @@ public class ActivityMedicamento extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_medicamento);
+        setContentView(R.layout.activity_medicamentos);
 
         listView = findViewById(R.id.medicamento_list_view);
         ArrayList<Medicamento> medicamentos = new ArrayList<>();
-        medicamentos.add(new Medicamento("Medicamento1", 2, 200, 15));
-        medicamentos.add(new Medicamento("Medicamento2", 8, 150, 6));
-        medicamentos.add(new Medicamento("Medicamento3", 2, 250, 7));
-        medicamentos.add(new Medicamento("Medicamento4", 2, 2, 20));
-        medicamentos.add(new Medicamento("Medicamento5", 2, 600, 5));
-        medicamentos.add(new Medicamento("Medicamento6", 2, 800, 3));
+        medicamentos.add(new Medicamento("Medicamento1", "200", 200, 15, "2 cada 8 horas","paracetamol", 0));
+        medicamentos.add(new Medicamento("Medicamento2", "200", 200, 15, "2 cada 8 horas","paracetamol", 0));
+        medicamentos.add(new Medicamento("Medicamento4", "200", 200, 15, "2 cada 8 horas","paracetamol", 0));
+        medicamentos.add(new Medicamento("Medicamento5", "200", 200, 15, "2 cada 8 horas","paracetamol", 0));
+        medicamentos.add(new Medicamento("Medicamento6", "200", 200, 15, "2 cada 8 horas","paracetamol", 0));
 
 
 

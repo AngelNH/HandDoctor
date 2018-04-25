@@ -1,18 +1,16 @@
-package com.iteso.handdoctor.beans;
-
-import java.util.Date;
-
 public class CitasPaciente {
     private String nombreDoctor;
     private String fecha;
-    private String lugar;
+    private long lat;
+    private long lon;
     private String especialidad;
     private String hora;
 
-    public CitasPaciente(String nombreDoctor, String fecha, String lugar, String especialidad, String hora) {
+    public CitasPaciente(String nombreDoctor, String fecha, long lat, long lon, String especialidad, String hora) {
         this.nombreDoctor = nombreDoctor;
         this.fecha = fecha;
-        this.lugar = lugar;
+        this.lat = lat;
+        this.lon = lon;
         this.especialidad = especialidad;
         this.hora = hora;
     }
@@ -21,8 +19,9 @@ public class CitasPaciente {
     public String toString() {
         return "CitasPaciente{" +
                 "nombreDoctor='" + nombreDoctor + '\'' +
-                ", fecha=" + fecha +
-                ", lugar='" + lugar + '\'' +
+                ", fecha='" + fecha + '\'' +
+                ", lat=" + lat +
+                ", lon=" + lon +
                 ", especialidad='" + especialidad + '\'' +
                 ", hora='" + hora + '\'' +
                 '}';
@@ -44,12 +43,20 @@ public class CitasPaciente {
         this.fecha = fecha;
     }
 
-    public String getLugar() {
-        return lugar;
+    public long getLat() {
+        return lat;
     }
 
-    public void setLugar(String lugar) {
-        this.lugar = lugar;
+    public void setLat(long lat) {
+        this.lat = lat;
+    }
+
+    public long getLon() {
+        return lon;
+    }
+
+    public void setLon(long lon) {
+        this.lon = lon;
     }
 
     public String getEspecialidad() {

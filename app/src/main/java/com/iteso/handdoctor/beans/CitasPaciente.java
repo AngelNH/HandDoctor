@@ -1,4 +1,7 @@
+package com.iteso.handdoctor.beans;
+
 public class CitasPaciente {
+    private int idPaciente;
     private String nombreDoctor;
     private String fecha;
     private long lat;
@@ -6,7 +9,8 @@ public class CitasPaciente {
     private String especialidad;
     private String hora;
 
-    public CitasPaciente(String nombreDoctor, String fecha, long lat, long lon, String especialidad, String hora) {
+    public CitasPaciente(int idPaciente, String nombreDoctor, String fecha, long lat, long lon, String especialidad, String hora) {
+        this.idPaciente = idPaciente;
         this.nombreDoctor = nombreDoctor;
         this.fecha = fecha;
         this.lat = lat;
@@ -15,16 +19,12 @@ public class CitasPaciente {
         this.hora = hora;
     }
 
-    @Override
-    public String toString() {
-        return "CitasPaciente{" +
-                "nombreDoctor='" + nombreDoctor + '\'' +
-                ", fecha='" + fecha + '\'' +
-                ", lat=" + lat +
-                ", lon=" + lon +
-                ", especialidad='" + especialidad + '\'' +
-                ", hora='" + hora + '\'' +
-                '}';
+    public int getIdPaciente() {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(int idPaciente) {
+        this.idPaciente = idPaciente;
     }
 
     public String getNombreDoctor() {
@@ -73,5 +73,18 @@ public class CitasPaciente {
 
     public void setHora(String hora) {
         this.hora = hora;
+    }
+
+    @Override
+    public String toString() {
+        return "CitasPaciente{" +
+                "idPaciente=" + idPaciente +
+                ", nombreDoctor='" + nombreDoctor + '\'' +
+                ", fecha='" + fecha + '\'' +
+                ", lat=" + lat +
+                ", lon=" + lon +
+                ", especialidad='" + especialidad + '\'' +
+                ", hora='" + hora + '\'' +
+                '}';
     }
 }

@@ -9,6 +9,10 @@ public class Medicamento {
     private String dosis, nombre;
     private int tipo;
 
+    public Medicamento(int idPaciente) {
+        this.idPaciente = idPaciente;
+    }
+
     public Medicamento(String idMed, String cantidad, int idPaciente, int diasRestantes, String dosis, String nombre, int tipo) {
         this.idMed = idMed;
         this.cantidad = cantidad;

@@ -38,40 +38,59 @@
             android:id="@+id/activity_main_agenda_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="agenda"
+            android:text="Agenda"
             android:layout_marginTop="10dp"
             android:onClick="agendaBtn"
-            android:backgroundTint="@color/colorPrimary"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="expediente"
-            android:layout_marginTop="10dp"
-            android:onClick="expedientBtn"
             android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
             />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="citas"
+            android:text="Expediente"
             android:layout_marginTop="10dp"
-            android:onClick="citasBtn"
-            android:backgroundTint="@color/colorPrimary"/>
-
+            android:onClick="expedientBtn"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            />
         <Button
-            android:id="@+id/custom_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="navigationView"
-             />
-    </LinearLayout>
+            android:text="Citas"
+            android:layout_marginTop="10dp"
+            android:onClick="citasBtn"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recetar"
+            android:layout_marginTop="10dp"
+            android:onClick="recetarBtn"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
+             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Añadir Paciente"
+            android:layout_marginTop="10dp"
+            android:onClick="addPacienteBtn"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            />
+
+    </LinearLayout>
+        <!---
         <android.support.design.widget.BottomNavigationView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             app:headerLayout="@layout/special_cases"
             app:menu="@menu/activity_main_bottom_navigation"/>
+            -->
 
 
 

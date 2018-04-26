@@ -5,27 +5,79 @@ package com.iteso.handdoctor.beans;
  */
 
 public class Paciente {
-    private int id;
+    public static final int DOCTOR=0;
+    public static final int SECRETARIA=1;
+    public static final int PACIENTE=2;
+
+
     private String name;
+    private String email;
+    private String phone;
+    private int estado;
 
-    public Paciente(int id, String name) {
-        this.id = id;
+    private boolean isLogged;
+
+    public Paciente(){
+
+    }
+    public Paciente(String name, String email, String phone) {
         this.name = name;
+        this.email = email;
+        this.phone = phone;
     }
-
-    public int getId() {
-        return id;
+    public Paciente(String name, String email, String phone, int estado) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.estado = estado;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
+    public boolean isLogged() {
+        return isLogged;
+    }
+
+    public void setLogged(boolean logged) {
+        isLogged = logged;
+    }
+
+    @Override
+    public String toString() {
+        return "Paciente{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", estado='" + estado +
+                '}';
     }
 }

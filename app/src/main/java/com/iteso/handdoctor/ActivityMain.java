@@ -1,6 +1,8 @@
 package com.iteso.handdoctor;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -31,12 +33,19 @@ public class ActivityMain extends AppCompatActivity {
         if (id == R.id.menu_activity_main_settings){
             //TODO show the settings activity.
             Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+            //now to prove it.
+
+            SharedPreferences sharedPreferences = getSharedPreferences("com.iteso.HANDDOCTOR_PREFERENCES",MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
         }
         return true;
     }
 
     void agendaBtn(View v){
-        Intent intent = new Intent(ActivityMain.this,ActivityAgenda.class);
+        //Intent intent = new Intent(ActivityMain.this,ActivityAgenda.class);
+        Intent intent = new Intent(ActivityMain.this,ActivityMedical.class);
         startActivity(intent);
     }
     void expedientBtn(View v){
@@ -44,8 +53,18 @@ public class ActivityMain extends AppCompatActivity {
         startActivity(intent);
     }
     void citasBtn(View v){
-        Intent intent = new Intent(ActivityMain.this,ActivityRegister.class);
-        //Intent intent = new Intent(ActivityMain.this,ActivityCitas.class);
+        //Intent intent = new Intent(ActivityMain.this,ActivityMedical.class);
+        Intent intent = new Intent(ActivityMain.this,ActivityCitas.class);
+        //Intent intent = new Intent(ActivityMain.this,ActivityMedicamento.class);
+
+        startActivity(intent);
+    }
+    void recetarBtn(View v){
+        Intent intent = new Intent(ActivityMain.this,ActivityRecetar.class);
+        startActivity(intent);
+    }
+    void addPacienteBtn(View v){
+        Intent intent = new Intent(ActivityMain.this,ActivityAdd.class);
         startActivity(intent);
     }
 }

@@ -66,13 +66,13 @@ public class AdapterMedicamento  extends BaseAdapter {
 
         Medicamento med = medicamentos.get(pos);
         name = v.findViewById(R.id.medicamento_label);
-        name.setText(med.getName());
+        name.setText(med.getNombre());
         miligramos = v.findViewById(R.id.miligramos_label);
-        miligramos.setText(""+med.getMg());
+        miligramos.setText(""+med.getCantidad());
         cantidad=v.findViewById(R.id.cantidad_label);
-        cantidad.setText(""+med.getCantidad());
+        cantidad.setText(""+med.getDosis());
         dias=v.findViewById(R.id.dias_label);
-        dias.setText(""+med.getDias());
+        dias.setText(""+med.getDiasRestantes());
         return v;
     }
 }

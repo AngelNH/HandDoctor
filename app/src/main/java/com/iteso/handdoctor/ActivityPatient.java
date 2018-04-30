@@ -99,4 +99,13 @@ public class ActivityPatient extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void openMap(View view) {
+        Intent intent = new Intent(ActivityPatient.this, ActivityMaps.class);
+        startActivity(intent);
+    }
+
+    public void logOut(MenuItem item) {
+        finish();
+    }
 }

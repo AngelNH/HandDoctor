@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/whichMedicament"
                 android:gravity="center"
-                android:paddingBottom="50dp" />
+                 />
 
 
 
@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/whichChronic"
                 android:gravity="center"
-                android:paddingBottom="50dp" />
+                 />
             <!--<EditText-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->
@@ -129,7 +129,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/btnSend"/>
+        android:text="@string/btnSend"
+        android:onClick="sendTest"/>
 
 
 

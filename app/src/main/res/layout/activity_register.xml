@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.leo_c.prueba_secretaria.ActivityRegister"
+    tools:context="com.iteso.handdoctor.ActivityRegister"
     android:padding="10dp"
     android:layout_marginTop="20dp"
     android:theme="@style/AppTheme.NoActionBar">
@@ -30,12 +30,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/textLastName"/>
-    <EditText
-        android:id="@+id/activity_register_edt_expedient"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/textExpedient"
-        android:inputType="number"/>
+    <!--<EditText-->
+        <!--android:id="@+id/activity_register_edt_expedient"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="@string/textExpedient"-->
+        <!--android:inputType="number"/>-->
     <EditText
         android:id="@+id/activity_register_edt_mail"
         android:layout_width="match_parent"
@@ -56,17 +56,17 @@
         android:paddingBottom="10dp"
         android:paddingTop="10dp">
         <RadioButton
-            android:id="@+id/activity_register_edt_rbtnUser"
+            android:id="@+id/activity_register_rbtnUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/checkUser"/>
         <RadioButton
-            android:id="@+id/activity_register_edt_rbtnDoctor"
+            android:id="@+id/activity_register_rbtnDoctor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/checkDoctor"/>
         <RadioButton
-            android:id="@+id/activity_register_edt_rbtnSecretary"
+            android:id="@+id/activity_register_rbtnSecretary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/checkSecretary"/>

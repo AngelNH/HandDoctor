@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "340137266167",
+    "firebase_url": "https://fir-itesoleonardo.firebaseio.com",
+    "project_id": "fir-itesoleonardo",
+    "storage_bucket": "fir-itesoleonardo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340137266167:android:a8bbeea5163901a9",
+        "android_client_info": {
+          "package_name": "com.iteso.handdoctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340137266167-caplu6sjsep8p7pqomg4j8vbevd0gjli.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iteso.handdoctor",
+            "certificate_hash": "ee99e5a11bbaf6c344f5522aab655897ec1ce0b8"
+          }
+        },
+        {
+          "client_id": "340137266167-65bcslsi7g03i6ttgdd55kq5jimo7ig6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB56kDmNpg4irFMIutnvYSjD47MM-bn77g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340137266167-65bcslsi7g03i6ttgdd55kq5jimo7ig6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

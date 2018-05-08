@@ -12,7 +12,8 @@ public class Doctor extends Paciente {
     private String consultorioLat;
     private String consultorioLon;
 
-    private ArrayList<Integer> pacientes;
+    private ArrayList<Integer> pacientes;//check the integer part
+
 
     public Doctor(String name, String email, String phone, int estado, String especialidad, String consultorioLat, String consultorioLon) {
         super(name, email, phone, estado);
@@ -20,7 +21,7 @@ public class Doctor extends Paciente {
         this.consultorioLat = consultorioLat;
         this.consultorioLon = consultorioLon;
     }
-
+    public Doctor(){}
     public Doctor(String name, String email, String phone, int estado) {
         super(name, email, phone, estado);
     }

@@ -66,7 +66,7 @@ public class AdapterCitasPacientes extends BaseAdapter {
 
         CitasPaciente cp = citasPacientes.get(pos);
         doctor = v.findViewById(R.id.doctor_label);
-        doctor.setText(cp.getNombre());
+        doctor.setText(cp.getId_doc());
         fecha = v.findViewById(R.id.fecha_label);
         fecha.setText(cp.getFecha());
         hora = v.findViewById(R.id.hora_label);

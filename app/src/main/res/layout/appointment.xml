@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/appointment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="200dp"
+    android:visibility="invisible"
     android:orientation="horizontal">
     <ImageButton
+        android:id="@+id/activity_agenda_prev"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight=".1"
@@ -28,6 +31,7 @@
                 android:paddingRight="20dp"/>
 
             <TextView
+                android:id="@+id/activity_agenda_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="04/04/2018"
@@ -45,6 +49,7 @@
                 android:paddingRight="20dp"/>
 
             <TextView
+                android:id="@+id/activity_agenda_pac_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Joceline Arreguin Robles"
@@ -62,11 +67,12 @@
                 android:paddingRight="20dp"/>
 
             <TextView
+                android:id="@+id/activity_ageda_hour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="21:00"
                 android:textColor="@color/colorPrimary"/>
-
+            <!-- pendiente -->
             <AnalogClock
                 android:id="@+id/appointment_clock"
                 android:layout_width="wrap_content"
@@ -83,6 +89,7 @@
 
     </LinearLayout>
     <ImageButton
+        android:id="@+id/activity_agenda_next"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight=".1"

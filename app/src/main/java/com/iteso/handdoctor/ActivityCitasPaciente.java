@@ -30,8 +30,8 @@ public class ActivityCitasPaciente extends AppCompatActivity {
         setContentView(R.layout.activity_citas_paciente);
         listView = findViewById(R.id.citaspaciente_list_view);
 
-        cp.add(new CitasPaciente("Vicky", "12/05/2018", "12.322", "13.23231", "Ginecología", "3:00pm"));
-        cp.add(new CitasPaciente("Miguel", "14/05/2018", "12.322", "13.23231", "Ginecología", "3:00pm"));
+        //cp.add(new CitasPaciente("Vicky", "12/05/2018", "12.322", "13.23231", "Ginecología", "3:00pm"));
+        //cp.add(new CitasPaciente("Miguel", "14/05/2018", "12.322", "13.23231", "Ginecología", "3:00pm"));
 
         AdapterCitasPacientes ad = new AdapterCitasPacientes(this, cp);
         listView.setAdapter(ad);

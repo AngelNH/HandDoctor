@@ -32,8 +32,9 @@
                 android:id="@+id/activity_citas_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/textPatName" />
+                android:hint="Telefono del paciente" />
         </android.support.design.widget.TextInputLayout>
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,22 +43,43 @@
             android:textSize="20dp"
             android:layout_marginTop="20dp"/>
 
+        <TextView
+            android:id="@+id/activity_citas_date_picked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20/09/2018"
+            android:clickable="true"
+            android:onClick="onClickDate"
+            android:textColor="@color/colorPrimary"/>
+
+        <!--
         <DatePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"></DatePicker>
+        -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hora de Cita:"
             android:textSize="20dp"
             android:layout_marginTop="20dp"/>
-
+        <TextView
+            android:id="@+id/activity_citas_time_picked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:00"
+            android:clickable="true"
+            android:onClick="onClickTime"
+            android:textColor="@color/colorPrimary"/>
+        <!--
         <TimePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"></TimePicker>
+         -->
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"

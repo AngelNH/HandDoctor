@@ -1,5 +1,6 @@
 package com.iteso.handdoctor;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,7 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class activity_patient extends AppCompatActivity
+public class ActivityPatient extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -67,7 +68,7 @@ public class activity_patient extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.activity_nav_action_settings) {
             return true;
         }
 
@@ -80,22 +81,31 @@ public class activity_patient extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.activity_nav_citasMedicas) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.activity_nav_medicamentos) {
+            Intent intent = new Intent(ActivityPatient.this, ActivityMedicamentos.class);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.activity_nav_medicalPreview) {
+            Intent intent = new Intent(ActivityPatient.this, ActivityMedical.class);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.activity_nav_chat) {
+            Intent intent = new Intent(ActivityPatient.this, ActivityChat.class);
+            startActivity(intent);
 
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void openMap(View view) {
+        Intent intent = new Intent(ActivityPatient.this, ActivityMaps.class);
+        startActivity(intent);
+    }
+
+    public void logOut(MenuItem item) {
+        finish();
     }
 }

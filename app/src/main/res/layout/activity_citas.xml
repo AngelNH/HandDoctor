@@ -22,11 +22,20 @@
             android:text="Agendar cita"
             android:layout_marginTop="20dp"/>
 
-        <EditText
+        <!--checar si vamos a agendar por medio del nombre, o no.-->
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Id Paciente"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/activity_citas_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefono del paciente" />
+        </android.support.design.widget.TextInputLayout>
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,28 +43,59 @@
             android:textSize="20dp"
             android:layout_marginTop="20dp"/>
 
+        <TextView
+            android:id="@+id/activity_citas_date_picked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20/09/2018"
+            android:clickable="true"
+            android:onClick="onClickDate"
+            android:textColor="@color/colorPrimary"/>
+
+        <!--
         <DatePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"></DatePicker>
+        -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hora de Cita:"
             android:textSize="20dp"
             android:layout_marginTop="20dp"/>
-
+        <TextView
+            android:id="@+id/activity_citas_time_picked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:00"
+            android:clickable="true"
+            android:onClick="onClickTime"
+            android:textColor="@color/colorPrimary"/>
+        <!--
         <TimePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"></TimePicker>
-        <EditText
+         -->
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Motivo"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/activity_citas_motivo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/textMotivo" />
+        </android.support.design.widget.TextInputLayout>
+
+
         <Button
+            android:id="@+id/activity_citas_agendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Agendar"

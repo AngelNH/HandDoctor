@@ -1,84 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="com.iteso.handdoctor.ActivityRegister"
     android:padding="10dp"
+
     android:layout_marginTop="20dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textRegister"
-        android:layout_gravity="center"
-        android:textSize="30sp"/>
-    <EditText
-        android:id="@+id/name"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/textName"/>
-
-    <EditText
-        android:id="@+id/lastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/textLastName"/>
-    <EditText
-        android:id="@+id/expedient"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/textExpedient"
-        android:inputType="number"/>
-    <EditText
-        android:id="@+id/mail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/textMail"
-        android:inputType="textEmailAddress"/>
-    <EditText
-        android:id="@+id/phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/textNumber"
-        android:inputType="phone"/>
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp">
-        <RadioButton
-            android:id="@+id/rbtnUser"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/checkUser"/>
-        <RadioButton
-            android:id="@+id/rbtnDoctor"
+            android:text="@string/textRegister"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/activity_register_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/textName"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/activity_register_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/textLastName"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/activity_register_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/textMail"
+                android:inputType="textEmailAddress"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/checkDoctor"/>
-        <RadioButton
-            android:id="@+id/rbtnSecretary"
+            android:layout_marginTop="10dp"
+            android:text="Password:"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/activity_register_pass1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/textPass"
+                android:inputType="textPassword"
+                android:layout_margin="10dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/checkSecretary"/>
-    </RadioGroup>
+            android:layout_marginTop="10dp"
+            android:text="Repeat password:"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/activity_register_pass2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/textPass"
+                android:inputType="textPassword"
+                android:layout_margin="10dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/activity_register_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/textNumber"
+                android:inputType="phone"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+            <RadioButton
+                android:id="@+id/rbtnUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkUser"/>
+            <RadioButton
+                android:id="@+id/rbtnDoctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkDoctor"/>
+            <RadioButton
+                android:id="@+id/rbtnSecretary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkSecretary"/>
+        </RadioGroup>
 
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btnRegister"
-        android:layout_gravity="center_horizontal"
-        android:onClick="signInBtn"/>
+        <Button
+            android:id="@+id/btnRegister"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnRegister"
+            android:layout_gravity="center_horizontal"
+            android:onClick="signInBtn"
+            android:layout_marginBottom="30dp"/>
 
 
 
 
-</LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>

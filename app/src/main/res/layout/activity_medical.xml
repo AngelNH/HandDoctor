@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.iteso.handdoctor.ActivityMedical"
+    android:padding="30dp"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <!--<EditText-->
+        <!--android:id="@+id/activity_medical_edt_name"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="@string/name"/>-->
+        <EditText
+            android:id="@+id/activity_medical_edt_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone number patient"
+            android:inputType="phone"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/activity_medical_txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="(Patient Name)"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <RadioButton
+                android:id="@+id/activity_medical_rdb_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female" />
+            <RadioButton
+                android:id="@+id/activity_medical_rdb_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/activity_medical_edt_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/age"/>
+        <EditText
+            android:id="@+id/activity_medical_edt_from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/region"
+            />
+        <EditText
+            android:id="@+id/activity_medical_edt_nationality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nationality" />
+        <EditText
+            android:id="@+id/activity_medical_edt_religion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Religion" />
+        <!--Civil state-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Civil State:"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <RadioButton
+                android:id="@+id/activity_medical_rdb_single"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Single" />
+            <RadioButton
+                android:id="@+id/activity_medical_rdb_married"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Married"/>
+            <RadioButton
+                android:id="@+id/activity_medical_rdb_divorced"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Divorced"/>
+        </RadioGroup>
+        <!--Civil state-->
+
+        <EditText
+            android:id="@+id/activity_medical_edt_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Weight"/>
+        <EditText
+            android:id="@+id/activity_medical_edt_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Height"/>
+        <EditText
+            android:id="@+id/activity_medical_edt_blood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Blood type"/>
+        <EditText
+            android:id="@+id/activity_medical_edt_actual_disease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="What is the actual disease?" />
+        <EditText
+            android:id="@+id/activity_medical_edt_arterial_tension"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Arterial tension"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/medicament"
+            android:textSize="20sp"
+            android:paddingTop="30dp"
+            android:gravity="center"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <RadioButton
+                android:id="@+id/activity_medical_rdb_yesMedicament"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rbtnYes"/>
+            <RadioButton
+                android:id="@+id/activity_medical_rdb_noMedicament"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rbtnNo"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/activity_medical_edt_medicament"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/whichMedicament"
+            android:gravity="center"
+            android:paddingBottom="50dp" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chronic"
+            android:textSize="20sp"
+            android:paddingTop="30dp"
+            android:gravity="center"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <RadioButton
+                android:id="@+id/activity_medical_rdb_yesDisease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rbtnYes"/>
+            <RadioButton
+                android:id="@+id/activity_medical_rdb_noDisease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rbtnNo"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/activity_medical_edt_chronic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/whichChronic"
+            android:gravity="center" />
+
+
+
+
+        <Button
+            android:id="@+id/activity_medical_btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/btnSend"/>
+
+    </LinearLayout>
+
+</ScrollView>

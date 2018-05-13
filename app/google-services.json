@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "71438153943",
+    "firebase_url": "https://handdoctor-iteso.firebaseio.com",
+    "project_id": "handdoctor-iteso",
+    "storage_bucket": "handdoctor-iteso.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71438153943:android:a569ef3bb7ead7e2",
+        "android_client_info": {
+          "package_name": "com.iteso.handdoctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71438153943-qk9aaqsvu1p54e5qfouo9onhg5ilicui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuWD5ykGid0UlGY-Rj9TcLr_bpQPhEOlI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

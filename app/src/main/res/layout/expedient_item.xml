@@ -48,13 +48,31 @@
             android:id="@+id/expediente_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No. Expediente:"
+            android:text="Phone:"
             android:paddingRight="10dp"/>
         <TextView
-            android:id="@+id/activity_expedient_number"
+            android:id="@+id/activity_expedient_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="11764"/>
+            android:text="3318974635"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/email_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:"
+                android:paddingRight="10dp"/>
+
+            <TextView
+                android:id="@+id/activity_expedient_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="joceline567@gmail.com"/>
         </LinearLayout>
 
     </LinearLayout>

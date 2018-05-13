@@ -2,13 +2,18 @@ package com.iteso.handdoctor.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.iteso.handdoctor.ActivityExpedient;
+import com.iteso.handdoctor.ActivityMain;
+import com.iteso.handdoctor.ActivityMedicalProfile;
 import com.iteso.handdoctor.R;
 import com.iteso.handdoctor.beans.Paciente;
 
@@ -20,15 +25,19 @@ import java.util.ArrayList;
 
 public class AdapterPaciente extends BaseAdapter{
 
-    protected Activity activity;
+    static protected Activity activity;
     protected ArrayList<Paciente> pacientes;
 
     private TextView name;
-    private TextView expedient;
 
-    public AdapterPaciente(Activity activity, ArrayList<Paciente> pacientes){
+    private TextView email;
+    private TextView phone;
+    Context context;
+
+    public AdapterPaciente(Activity activity, ArrayList<Paciente> pacientes,Context context){
         this.activity = activity;
         this.pacientes=pacientes;
+        this.context = context;
     }
     @Override
     public int getCount() {
@@ -50,7 +59,7 @@ public class AdapterPaciente extends BaseAdapter{
 
     @Override
     public long getItemId(int i) {
-        return pacientes.get(i).getId();
+        return i;
     }
 
     @Override
@@ -61,14 +70,26 @@ public class AdapterPaciente extends BaseAdapter{
             v = inflater.inflate(R.layout.expedient_item,null);
         }
 
-        Paciente pac = pacientes.get(pos);
-        expedient = v.findViewById(R.id.activity_expedient_number);
-        Log.e("HANDDOCTOR","ID: "+ pac.getId()+" NAME: "+pac.getName());
-        expedient.setText(pac.getId()+"");
+        final Paciente pac = pacientes.get(pos);
+        phone = v.findViewById(R.id.activity_expedient_phone);
+        phone.setText(pac.getPhone());
         name = v.findViewById(R.id.activity_expedient_name);
         name.setText(pac.getName());
+        email = v.findViewById(R.id.activity_expedient_email);
+        email.setText(pac.getEmail());
+
+        Log.e("HANDDOCTOR"," NAME: "+pac.getName() + "PHONE: "+ pac.getPhone());
 
 
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AdapterPaciente.activity,"Mensaje de que le pico al paciente "+pac.getName(),Toast.LENGTH_LONG).show();//TODO mostrar los datos del paciente.
+                Intent intent = new Intent(context,ActivityMedicalProfile.class);
+                intent.putExtra("ID_PAC",pac.getPhone());
+                v.getContext().startActivity(intent);
+            }
+        });
         return v;
     }
 }

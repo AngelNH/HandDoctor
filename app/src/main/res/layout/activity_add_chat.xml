@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.iteso.handdoctor.ActivityAddChat"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <EditText
+        android:id="@+id/activity_add_chat_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Find by Number..."
+        android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/activity_add_chat_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:src="@android:drawable/ic_menu_search"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/colorPrimary"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                android:layout_marginRight="30dp"
+                android:textSize="30sp"/>
+            <TextView
+                android:id="@+id/activity_add_chat_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Jose Estrada"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone:"
+                android:layout_marginRight="30dp"
+                android:textSize="30sp"/>
+            <TextView
+                android:id="@+id/activity_add_chat_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3318275647"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/activity_add_chat_lin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Especialidad:"
+                android:layout_marginRight="15dp"
+                android:textSize="30sp"/>
+            <TextView
+                android:id="@+id/activity_add_chat_especial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ginecologo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/activity_add_chat_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="add"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

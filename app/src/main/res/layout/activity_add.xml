@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.iteso.handdoctor.ActivityAdd"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/activity_add_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone of the pacient."
+                android:layout_margin="10dp"
+                android:inputType="phone"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/activity_add_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:text="Search"
+            android:onClick="searchBtn"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/activity_add_no_coincidence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No coincidence."
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30dp"
+        android:visibility="invisible"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" 
+            android:layout_weight=".2"
+            android:text="Name:"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/activity_add_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorPrimary"
+            android:text="Joceline"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:text="Phone:"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/activity_add_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimary"
+            android:text="331235435"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:text="Email:"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/activity_add_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimary"
+            android:text="jocelinearr@gmail.com"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/activity_add_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="add"
+        android:onClick="addBtn"/>
+
+</LinearLayout>

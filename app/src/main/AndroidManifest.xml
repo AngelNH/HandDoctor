@@ -35,13 +35,6 @@
         </activity>
         <activity android:name=".ActivityLogin" />
         <activity android:name=".ActivityRegister" />
-        <activity android:name=".ActivityMedical" />
-        <activity
-            android:name=".ActivityPatient"
-            android:label="@string/title_activity_patient"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ActivityChat" />
-        <activity android:name=".ActivityMedicamentos" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -60,6 +53,17 @@
         <activity
             android:name=".ActivityMaps"
             android:label="@string/title_activity_maps"></activity>
+        <activity android:name=".ActivityCitasPaciente" />
+        <activity android:name=".ActivityMedical" />
+        <activity android:name=".ActivityMedicamento" />
+        <activity android:name=".ActivityRecetar" />
+        <activity android:name=".ActivityAdd" />
+        <activity android:name=".ActivityMedicalProfile" />
+        <activity android:name=".ActivityChat" />
+        <activity android:name=".ActivityRoomChat" />
+        <activity android:name=".ActivityAddChat" />
+        <activity android:name=".ActivityContactos"></activity>
+
     </application>
 
 </manifest>

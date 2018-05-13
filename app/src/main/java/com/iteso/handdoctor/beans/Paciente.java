@@ -1,84 +1,53 @@
 package com.iteso.handdoctor.beans;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+
+import java.util.ArrayList;
+
 
 /**
  * Created by inqui on 05/04/2018.
  */
 
-public class Paciente implements Parcelable {
-    int id;
-    String name;
-    String lastName;
-    String email;
-    String phone;
-    int state;
+public class Paciente {
+    public static final int DOCTOR=0;
+    public static final int SECRETARIA=1;
+    public static final int PACIENTE=2;
 
 
-    public Paciente(String name, String lastName, String email, String phone,int state) {
+    private String name;
+    private String email;
+    private String phone;
+    private int estado;
+
+
+    //careful
+    private ArrayList<String> chats;
+
+    private boolean isLogged;
+    private ArrayList<String> citas;
+
+    public Paciente(){
+
+    }
+    public Paciente(String name, String email, String phone) {
         this.name = name;
-        this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.state = state;
     }
-
-
-
-    public Paciente(int id, String name, String lastName, String email, String phone) {
-        this.id = id;
+    public Paciente(String name, String email, String phone, int estado) {
         this.name = name;
-        this.lastName = lastName;
         this.email = email;
         this.phone = phone;
+        this.estado = estado;
+    }
+    public String getName() {
+        return name;
     }
 
-
-
-    public Paciente(int id, String name) {
-        this.id = id;
+    public void setName(String name) {
         this.name = name;
     }
 
-    protected Paciente(Parcel in) {
-        id = in.readInt();
-        name = in.readString();
-        lastName = in.readString();
-        email = in.readString();
-        phone = in.readString();
-    }
-
-    public static final Creator<Paciente> CREATOR = new Creator<Paciente>() {
-        @Override
-        public Paciente createFromParcel(Parcel in) {
-            return new Paciente(in);
-        }
-
-        @Override
-        public Paciente[] newArray(int size) {
-            return new Paciente[size];
-        }
-    };
-
-    @Override
-    public String toString() {
-        return "Paciente{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public String getEmail() {
         return email;
@@ -96,35 +65,37 @@ public class Paciente implements Parcelable {
         this.phone = phone;
     }
 
-
-
-    public int getId() {
-        return id;
+    public int getEstado() {
+        return estado;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
 
-    public String getName() {
-        return name;
+    public boolean isLogged() {
+        return isLogged;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLogged(boolean logged) {
+        isLogged = logged;
+    }
+
+    public ArrayList<String> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(ArrayList<String> citas) {
+        this.citas = citas;
     }
 
     @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
-        dest.writeString(name);
-        dest.writeString(lastName);
-        dest.writeString(email);
-        dest.writeString(phone);
+    public String toString() {
+        return "Paciente{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", estado='" + estado +
+                '}';
     }
 }

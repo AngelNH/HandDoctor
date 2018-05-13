@@ -176,7 +176,7 @@ public class ActivityContactos extends AppCompatActivity {
                         databaseReference.child("Doctor").child(contactos.get(position).getPhone()).child("Contactos").child(gen_id).child("chat").setValue(id_chat);
                         databaseReference.child("Doctor").child(contactos.get(position).getPhone()).child("Contactos").child(gen_id).child("name").setValue(namePac);
                     }
-                    databaseReference.child("Salas").child(id_chat).setValue(new Room(nameDoc,namePac,Long.MIN_VALUE,""));
+                    databaseReference.child("Salas").child(id_chat).setValue(new Room(nameDoc,namePac,Long.valueOf("4"),""));
 
 
                 }

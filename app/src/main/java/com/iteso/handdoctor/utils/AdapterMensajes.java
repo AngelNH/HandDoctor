@@ -1,6 +1,7 @@
 package com.iteso.handdoctor.utils;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,12 @@ public class AdapterMensajes extends RecyclerView.Adapter<HolderMensaje>{
     }
 
     public void addMensaje(MessageReceiver m){
+        m.setTipo(0);
+        listMessages.add(m);
+        notifyItemInserted(listMessages.size());
+    }
+    public void addForeingMensaje(MessageReceiver m){
+        m.setTipo(1);
         listMessages.add(m);
         notifyItemInserted(listMessages.size());
     }
@@ -50,6 +57,8 @@ public class AdapterMensajes extends RecyclerView.Adapter<HolderMensaje>{
             holder.getFoto().setVisibility(View.GONE);
             holder.getMensaje().setVisibility(View.VISIBLE);
         }
+        if (listMessages.get(position).getTipo()==1)//TODO design part
+        holder.getCard().setBackgroundColor(Color.rgb(229,249,255));
 
         Long code = listMessages.get(position).getHora();
         Date d = new Date(code);

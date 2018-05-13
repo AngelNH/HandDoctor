@@ -1,5 +1,6 @@
 package com.iteso.handdoctor.utils;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,13 +19,16 @@ public class HolderMensaje extends RecyclerView.ViewHolder {
     private TextView hora;
     private ImageView foto;
 
+    private CardView card;
+
     public HolderMensaje(View itemView) {
         super(itemView);
-
         nombre = itemView.findViewById(R.id.card_nombre);
         mensaje = itemView.findViewById(R.id.card_mensaje);
         hora = itemView.findViewById(R.id.card_hora);
         foto = itemView.findViewById(R.id.card_mensaje_foto);
+
+        card = itemView.findViewById(R.id.card_view_message);
     }
 
     public TextView getNombre() {
@@ -57,5 +61,16 @@ public class HolderMensaje extends RecyclerView.ViewHolder {
 
     public void setFoto(ImageView foto) {
         this.foto = foto;
+    }
+
+
+
+
+    public CardView getCard() {
+        return card;
+    }
+
+    public void setCard(CardView card) {
+        this.card = card;
     }
 }

@@ -9,6 +9,8 @@ import com.iteso.handdoctor.beans.Message;
 public class MessageReceiver extends Message {
     private Long hora;
 
+    private int tipo;
+
     public MessageReceiver() {
     }
 
@@ -20,12 +22,21 @@ public class MessageReceiver extends Message {
         super(name, message, type_message, urlFoto);
         this.hora = hora;
     }
-
     public Long getHora() {
         return hora;
     }
 
     public void setHora(Long hora) {
         this.hora = hora;
+    }
+
+
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
     }
 }

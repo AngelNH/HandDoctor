@@ -35,9 +35,11 @@ public class ActivityChat extends AppCompatActivity {
 
     private AdapterMensajes adapter;
     private DatabaseReference databaseReference;
+    private DatabaseReference databaseParent;
     StorageReference storageReference;
 
     String chat_id;
+    String docName, pacName, type;
 
 
 
@@ -45,6 +47,14 @@ public class ActivityChat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+        Bundle bundle = getIntent().getExtras();
+        if(bundle.getString("ID_CHAT")!= null)
+        {
+            chat_id = bundle.getString("ID_CHAT");
+            docName = bundle.getString("DOC_NAME");
+            pacName = bundle.getString("PAC_NAME");
+            type = bundle.getString("TYPE");
+        }
 
         send = findViewById(R.id.activity_chat_send);
         input = findViewById(R.id.activity_chat_input_text);
@@ -52,8 +62,13 @@ public class ActivityChat extends AppCompatActivity {
         recyclerView = findViewById(R.id.activity_chat_rv_mensajes);
         sendimg = findViewById(R.id.activity_chat_send_img);
 
+
+        if (type.equals(""+Paciente.DOCTOR))nombre.setText(pacName);
+        else if (type.equals(""+Paciente.PACIENTE))nombre.setText(docName);
+
+        databaseParent = FirebaseDatabase.getInstance().getReference();
         databaseReference = FirebaseDatabase.getInstance().getReference("Chats");//we add the fb part
-        chat_id= databaseReference.push().getKey();//TODO we are going to get it in the previoous layout.
+        //chat_id= databaseReference.push().getKey();//TODO we are going to get it in the previoous layout.
         storageReference = FirebaseStorage.getInstance().getReference("images");
 
         adapter = new AdapterMensajes(this);
@@ -76,7 +91,10 @@ public class ActivityChat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //adapter.addMensaje(new Message(nombre.getText().toString(),input.getText().toString(),"12:00","1"));
-                databaseReference.child(chat_id).push().setValue(new MessageSender(nombre.getText().toString(),input.getText().toString(),"1",ServerValue.TIMESTAMP));
+                MessageSender message = new MessageSender(nombre.getText().toString(),input.getText().toString(),"1",ServerValue.TIMESTAMP);
+                databaseReference.child(chat_id).push().setValue(message);
+                databaseParent.child("Salas").child(chat_id).child("lastmessage").setValue(message.getMessage());
+                databaseParent.child("Salas").child(chat_id).child("hour").setValue(ServerValue.TIMESTAMP);
                 input.setText("");
             }
         });
@@ -92,6 +110,9 @@ public class ActivityChat extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 MessageReceiver m = dataSnapshot.getValue(MessageReceiver.class);
+                if(m.getName().equals(nombre.getText().toString())){
+                    adapter.addForeingMensaje(m);
+                }
                 adapter.addMensaje(m);
             }
 

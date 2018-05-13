@@ -39,18 +39,19 @@ public class ActivityRoomChat extends AppCompatActivity {
 
         chats = findViewById(R.id.activity_room_chat_list_view);
         fab = findViewById(R.id.activity_room_chat_fab);
-
+        chats.clearChoices();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         Log.e("ACT_ROOM","Rooms: "+rooms.toString());
         loadID();
         adapterRoomChat = new AdapterRoomChat(ActivityRoomChat.this,rooms,type);
 
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Salas").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 chats.clearChoices();
-                for(DataSnapshot data : dataSnapshot.child("Salas").getChildren()){
+                rooms.clear();
+                for(DataSnapshot data : dataSnapshot.getChildren()){
                     id_chats.add(data.getKey());
                     Room room = data.getValue(Room.class);
                     Log.e("ACTIVITY_ROOM","Room: "+room.toString());
@@ -82,9 +83,12 @@ public class ActivityRoomChat extends AppCompatActivity {
         chats.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Room room = rooms.get(position);
+                chats.clearChoices();
                 Intent i = new Intent(ActivityRoomChat.this,ActivityChat.class);
                 i.putExtra("ID_CHAT",id_chats.get(position));
+                i.putExtra("DOC_NAME",rooms.get(position).getNameDoc());
+                i.putExtra("PAC_NAME",rooms.get(position).getNamePac());
+                i.putExtra("TYPE",type);
                 startActivity(i);
             }
         });
@@ -93,6 +97,7 @@ public class ActivityRoomChat extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        chats.clearChoices();
 
     }
     public void loadID(){

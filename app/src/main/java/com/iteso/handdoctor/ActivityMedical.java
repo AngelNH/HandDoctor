@@ -36,10 +36,12 @@ public class ActivityMedical extends AppCompatActivity {
     String id_doc;
 
     ArrayList<Paciente> pacientes = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical);
+
 
         id = findViewById(R.id.activity_medical_edt_id);
         send = findViewById(R.id.activity_medical_btn_send);
@@ -193,5 +195,6 @@ public class ActivityMedical extends AppCompatActivity {
                 getSharedPreferences("com.iteso.HANDDOCTOR_PREFERENCES",MODE_PRIVATE);
         id_doc = sharedPreferences.getString("ID","555");
         sharedPreferences = null;
+
     }
 }

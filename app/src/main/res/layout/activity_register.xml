@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context="com.iteso.handdoctor.ActivityRegister"
     android:padding="10dp"
+
     android:layout_marginTop="20dp">
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,6 +20,7 @@
             android:text="@string/textRegister"
             android:layout_gravity="center"
             android:textSize="30sp"/>
+
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -136,13 +138,13 @@
 
         <Button
             android:id="@+id/btnRegister"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btnRegister"
             android:layout_gravity="center_horizontal"
             android:onClick="signInBtn"
             android:layout_marginBottom="30dp"/>
-
 
 
 

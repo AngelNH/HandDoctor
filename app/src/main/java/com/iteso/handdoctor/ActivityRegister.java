@@ -6,6 +6,7 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -14,11 +15,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.iteso.handdoctor.beans.Doctor;
 import com.iteso.handdoctor.beans.Paciente;
 
+
 public class ActivityRegister extends AppCompatActivity {
     TextInputEditText name,lastname,email,phone,password1,password2;
     RadioButton radPaciente, radDoctor,radSecretary;
     DatabaseReference databaseReference;
     int state;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

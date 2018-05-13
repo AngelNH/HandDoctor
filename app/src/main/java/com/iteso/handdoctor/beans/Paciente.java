@@ -1,6 +1,8 @@
 package com.iteso.handdoctor.beans;
 
+
 import java.util.ArrayList;
+
 
 /**
  * Created by inqui on 05/04/2018.
@@ -16,6 +18,7 @@ public class Paciente {
     private String email;
     private String phone;
     private int estado;
+
 
     //careful
     private ArrayList<String> chats;
@@ -44,6 +47,7 @@ public class Paciente {
     public void setName(String name) {
         this.name = name;
     }
+
 
     public String getEmail() {
         return email;

@@ -26,6 +26,7 @@
     <string name="gender">Gender:</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
+name="whichChronic">What is the chronic disease?</string>
     <string name="age">Age</string>
     <string name="region">Direction</string>
     <!--Detallada-->
@@ -53,6 +54,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_patient">ActivityPatient</string>
 
+    <string name="title_activity_maps">Map</string>
+
+
     <string name="textPatName">Apellido Paterno</string>
     <string name="textMotivo">Motivo de cita</string>
+
 </resources>

@@ -5,33 +5,35 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/activity_nav_citasMedicas"
-            android:icon="@drawable/citas_default"
-            android:title="Citas Médicas" />
+
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Import" />
         <item
-            android:id="@+id/activity_nav_medicamentos"
+            android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Medicamentos" />
+            android:title="Gallery" />
         <item
-            android:id="@+id/activity_nav_medicalPreview"
+            android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Cuestionario médico" />
+            android:title="Slideshow" />
         <item
-            android:id="@+id/activity_nav_chat"
+            android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Chat" />
+            android:title="Tools" />
     </group>
 
-    <item >
+    <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/activity_nav_share"
+                android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Recordatorios" />
+                android:title="Share" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Ajustes" />
+                android:title="Send" />
+
         </menu>
     </item>
 

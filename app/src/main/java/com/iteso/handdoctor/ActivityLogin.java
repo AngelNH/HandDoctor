@@ -7,7 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import android.widget.EditText;
+
 import android.widget.Toast;
+
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,6 +22,7 @@ import com.iteso.handdoctor.beans.Paciente;
 import com.iteso.handdoctor.beans.User;
 
 import java.util.ArrayList;
+
 
 public class ActivityLogin extends AppCompatActivity {
     TextInputEditText user,password;
@@ -55,6 +60,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     public void logInBtn(View view){
+
         if (compareToFirebase(user.getText().toString(),password.getText().toString())){
             if(state == Paciente.DOCTOR || state == Paciente.SECRETARIA) {
                 Intent intent = new Intent(ActivityLogin.this, ActivityMain.class);
@@ -72,8 +78,8 @@ public class ActivityLogin extends AppCompatActivity {
         Intent intent = new Intent(ActivityLogin.this,ActivityRegister.class);
         startActivity(intent);
         finish();
-    }
 
+    }
     public boolean compareToFirebase(String user, String password){
         sharedPreferences = getSharedPreferences("com.iteso.HANDDOCTOR_PREFERENCES",MODE_PRIVATE);
         for(int i = 0;i<users.size();i++){

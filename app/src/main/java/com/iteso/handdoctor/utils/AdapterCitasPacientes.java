@@ -65,15 +65,13 @@ public class AdapterCitasPacientes extends BaseAdapter {
         }
 
         CitasPaciente cp = citasPacientes.get(pos);
-        doctor = v.findViewById(R.id.doctor_label);
-        doctor.setText(cp.getNombre());
-        fecha = v.findViewById(R.id.fecha_label);
+        doctor = v.findViewById(R.id.activity_citas_paciente_doctor_label);
+        doctor.setText(cp.getName_doc());
+        fecha = v.findViewById(R.id.activity_citas_paciente_fecha_label);
         fecha.setText(cp.getFecha());
-        hora = v.findViewById(R.id.hora_label);
+        hora = v.findViewById(R.id.activity_citas_paciente_hora_label);
         hora.setText(cp.getHora());
-        lugar=v.findViewById(R.id.lugar_label);
-        lugar.setText("Latitude: "+cp.getConsultorioLat()+ " Longitud: "+cp.getConsultorioLon());
-        especialidad=v.findViewById(R.id.especialidad_label);
+        especialidad=v.findViewById(R.id.activity_citas_paciente_especialidad_label);
         especialidad.setText(cp.getEspecialidad());
         return v;
     }

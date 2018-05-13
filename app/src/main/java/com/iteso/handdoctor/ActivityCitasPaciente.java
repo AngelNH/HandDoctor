@@ -20,21 +20,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ActivityCitasPaciente extends AppCompatActivity {
+    String id;
     DatabaseReference databaseReference;
     ListView listView;
     ArrayList<CitasPaciente> cp = new ArrayList<>();
-    Map<String,CitasPaciente> citas = new HashMap<>();
+    //Map<String,CitasPaciente> citas = new HashMap<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //erase these
+        id = "3299085648";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citas_paciente);
         listView = findViewById(R.id.citaspaciente_list_view);
 
-        cp.add(new CitasPaciente("Vicky", "12/05/2018", "12.322", "13.23231", "Ginecología", "3:00pm"));
-        cp.add(new CitasPaciente("Miguel", "14/05/2018", "12.322", "13.23231", "Ginecología", "3:00pm"));
+        //cp.add(new CitasPaciente("Vicky", "12/05/2018", "12.322", "13.23231", "Ginecología", "3:00pm"));
+        //cp.add(new CitasPaciente("Miguel", "14/05/2018", "12.322", "13.23231", "Ginecología", "3:00pm"));
 
-        AdapterCitasPacientes ad = new AdapterCitasPacientes(this, cp);
-        listView.setAdapter(ad);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -47,28 +49,23 @@ public class ActivityCitasPaciente extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
+                for (DataSnapshot data : dataSnapshot.child("Paciente").child(id).child("Citas").getChildren()){
+                    CitasPaciente cita = data.getValue(CitasPaciente.class);
+                    cp.add(cita);
+                    Log.e("ACTIVITY_CITAS_PAC",cita.toString());
+                }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });//TODO event listener
+        });
 
-
-
-        Log.e("FIREBASE",citas.toString());
-
-
+        AdapterCitasPacientes ad = new AdapterCitasPacientes(this, cp);
+        listView.setAdapter(ad);
+        //Log.e("FIREBASE",citas.toString());
     }
 
-    public void addCita(View v){
-        for(int i = 0; i<cp.size();i++) {
-            CitasPaciente cita = cp.get(i);
-            String ID_cita = databaseReference.child("citasPaciente").push().getKey();
-            databaseReference.child("citasPaciente").child(ID_cita).setValue(cita);
-            citas.put(ID_cita,cita);
-        }
-    }
+
 }

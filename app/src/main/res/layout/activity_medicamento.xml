@@ -21,9 +21,11 @@
         android:layout_weight=".1"
         android:orientation="horizontal">
         <EditText
-            android:layout_width="0dp"
+            android:id="@+id/activity_medicamento_search"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight=".9"/>
+            android:hint="Buscar medicamento"
+            />
         />
 
     </LinearLayout>

@@ -26,7 +26,7 @@
             android:orientation="horizontal"
             android:padding=".7dp">
             <TextView
-                android:id="@+id/doctor_label"
+                android:id="@+id/activity_citas_paciente_doctor_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dr Hernandez"
@@ -40,7 +40,7 @@
             android:orientation="horizontal"
             android:padding="7dp">
              <TextView
-                android:id="@+id/especialidad_label"
+                android:id="@+id/activity_citas_paciente_especialidad_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ginecologa"/>
@@ -52,34 +52,35 @@
             android:orientation="horizontal"
             android:paddingBottom="10dp">
             <TextView
-                android:id="@+id/fecha_label"
+                android:id="@+id/activity_citas_paciente_fecha_label"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="25/04/2018"
                 android:paddingRight="5dp"/>
 
             <TextView
-                android:id="@+id/hora_label"
+                android:id="@+id/activity_citas_paciente_hora_label"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="12 pm"
                 android:paddingRight="10dp"/>
 
         </LinearLayout>
+        <!--
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:orientation="horizontal"
             android:paddingBottom="10dp">
              <TextView
-                android:id="@+id/lugar_label"
+                android:id="@+id/activity_citas_paciente_motive_label"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Plaza del sol"
+                android:text="Dolor"
                 />
 
         </LinearLayout>
-
+        -->
     </LinearLayout>
 
 

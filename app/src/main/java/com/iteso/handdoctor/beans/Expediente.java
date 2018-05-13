@@ -72,8 +72,12 @@ public class Expediente {
         this.id = id;
     }
 
-    public int getGender() {
-        return gender;
+    public String getGender() {
+        if (this.gender == this.GENDER_FEMALE)return "femenino";
+        return "masculino";
+    }
+    public int getGenderN() {
+       return this.gender;
     }
 
     public void setGender(int gender) {
@@ -114,6 +118,11 @@ public class Expediente {
 
     public int getCivil() {
         return civil;
+    }
+    public String getCivilS(){
+        if (this.civil == CIVIL_SINGLE)return "Soltero";
+        else if(this.civil == CIVIL_MARRIED)return "Casado";
+        return "Divorciado";
     }
 
     public void setCivil(int civil) {

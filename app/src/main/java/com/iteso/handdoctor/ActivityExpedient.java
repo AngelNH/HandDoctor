@@ -57,9 +57,9 @@ public class ActivityExpedient extends AppCompatActivity {
                     }
                 }
                 if (founded)
-                    adapter = new AdapterPaciente(ActivityExpedient.this,result);
+                    adapter = new AdapterPaciente(ActivityExpedient.this,result,ActivityExpedient.this);
                 else
-                    adapter = new AdapterPaciente(ActivityExpedient.this,pacientes);
+                    adapter = new AdapterPaciente(ActivityExpedient.this,pacientes, ActivityExpedient.this);
                 adapter.notifyDataSetChanged();
                 listView.setAdapter(adapter);
             }
@@ -73,7 +73,7 @@ public class ActivityExpedient extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.length() == 0){
-                    adapter = new AdapterPaciente(ActivityExpedient.this,pacientes);
+                    adapter = new AdapterPaciente(ActivityExpedient.this,pacientes,ActivityExpedient.this);
                     adapter.notifyDataSetChanged();
                     listView.setAdapter(adapter);
                 }
@@ -105,7 +105,7 @@ public class ActivityExpedient extends AppCompatActivity {
             }
         });
         //tomamos de la base de datos los datos del paciente y llenamos el array.
-        adapter = new AdapterPaciente(this,pacientes);
+        adapter = new AdapterPaciente(this,pacientes, ActivityExpedient.this);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/card_chat"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/card_img"
+        android:layout_width="90sp"
+        android:layout_height="90sp"
+        android:src="@drawable/chat_ic"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10sp">
+            <TextView
+                android:id="@+id/card_room_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dr. Miguel Nuño"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/card_room_hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:00 P.M."
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="15sp"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/card_room_mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:padding="10sp"
+            android:text="Si claro el lunes se la entrego..."
+            android:textColor="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

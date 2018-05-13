@@ -1,5 +1,7 @@
 package com.iteso.handdoctor.beans;
 
+import java.util.ArrayList;
+
 /**
  * Created by inqui on 05/04/2018.
  */
@@ -15,7 +17,11 @@ public class Paciente {
     private String phone;
     private int estado;
 
+    //careful
+    private ArrayList<String> chats;
+
     private boolean isLogged;
+    private ArrayList<String> citas;
 
     public Paciente(){
 
@@ -69,6 +75,14 @@ public class Paciente {
 
     public void setLogged(boolean logged) {
         isLogged = logged;
+    }
+
+    public ArrayList<String> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(ArrayList<String> citas) {
+        this.citas = citas;
     }
 
     @Override

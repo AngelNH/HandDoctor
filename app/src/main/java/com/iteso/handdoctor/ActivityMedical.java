@@ -1,6 +1,7 @@
 package com.iteso.handdoctor;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -31,6 +32,8 @@ public class ActivityMedical extends AppCompatActivity {
     RadioButton yesDisease, noDisease,yesMedicament,noMedicament;
     RadioButton single, married, divorced;
     TextView patname;
+
+    String id_doc;
 
     ArrayList<Paciente> pacientes = new ArrayList<>();
     @Override
@@ -68,6 +71,7 @@ public class ActivityMedical extends AppCompatActivity {
         noMedicament.setChecked(true);
         chronic.setEnabled(false);
         medicament.setEnabled(false);
+        loadID();
 
         yesDisease.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +104,8 @@ public class ActivityMedical extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot data : dataSnapshot.child("Paciente").getChildren()){
+                //for (DataSnapshot data : dataSnapshot.child("Paciente").getChildren()){//change it only from de doctor.
+                for (DataSnapshot data : dataSnapshot.child("Doctor").child(id_doc).child("Pacientes").getChildren()){
                     pacientes.add(data.getValue(Paciente.class));
                 }
             }
@@ -174,7 +179,7 @@ public class ActivityMedical extends AppCompatActivity {
                 expediente.setBlood(blood.getText().toString());
                 expediente.setActualDisease(actual.getText().toString());
                 expediente.setTension(tension.getText().toString());
-                //TODO add tto firebase.
+                //add to firebase
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
                 databaseReference.child("Expediente").child(expediente.getId()).setValue(expediente);
                 Intent intent = new Intent(ActivityMedical.this,ActivityMain.class);
@@ -182,5 +187,11 @@ public class ActivityMedical extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    public void loadID(){
+        SharedPreferences sharedPreferences =
+                getSharedPreferences("com.iteso.HANDDOCTOR_PREFERENCES",MODE_PRIVATE);
+        id_doc = sharedPreferences.getString("ID","555");
+        sharedPreferences = null;
     }
 }

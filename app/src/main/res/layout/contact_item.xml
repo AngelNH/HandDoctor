@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/contact_lin"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/contact_item_contact_image"
+        android:layout_width="90sp"
+        android:layout_height="90sp"
+        android:src="@drawable/hand_doctor_icon"/>
+    <TextView
+        android:id="@+id/contact_item_contact_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Joceline Arreguin"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimary"/>
+
+</LinearLayout>

@@ -75,7 +75,6 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     public boolean compareToFirebase(String user, String password){
-        //TODO compare
         sharedPreferences = getSharedPreferences("com.iteso.HANDDOCTOR_PREFERENCES",MODE_PRIVATE);
         for(int i = 0;i<users.size();i++){
             Log.e("FIREBASE_USER_OUTSIDE",users.get(i).toString());
@@ -85,6 +84,7 @@ public class ActivityLogin extends AppCompatActivity {
                 editor.putString("NAME",users.get(i).getUser());
                 editor.putString("PWD",users.get(i).getPassword());
                 editor.putString("ID",users.get(i).getId());
+                editor.putString("TYPE",""+state);
                 editor.putBoolean("LOGGED",true);
                 editor.apply();
                 state = users.get(i).getState();

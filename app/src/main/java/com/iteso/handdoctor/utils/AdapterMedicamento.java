@@ -2,16 +2,29 @@ package com.iteso.handdoctor.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.iteso.handdoctor.R;
 import com.iteso.handdoctor.beans.Medicamento;
+import com.iteso.handdoctor.beans.Paciente;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -27,10 +40,14 @@ public class AdapterMedicamento  extends BaseAdapter {
     private TextView cantidad;
     private TextView dias;
 
+    private ImageView image;
+
+
     public AdapterMedicamento(Activity activity, ArrayList<Medicamento> medicamentos) {
         this.activity = activity;
         this.medicamentos = medicamentos;
     }
+
 
     @Override
     public int getCount() {
@@ -58,21 +75,38 @@ public class AdapterMedicamento  extends BaseAdapter {
 
     @Override
     public View getView(int pos, View view, ViewGroup viewGroup) {
-        View v = view;
-        if (view == null){
-            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inflater.inflate(R.layout.medicamentos_items,null);
-        }
-
         Medicamento med = medicamentos.get(pos);
-        name = v.findViewById(R.id.medicamento_label);
-        name.setText(med.getNombre());
-        miligramos = v.findViewById(R.id.miligramos_label);
-        miligramos.setText(""+med.getCantidad());
-        cantidad=v.findViewById(R.id.cantidad_label);
-        cantidad.setText(""+med.getDosis());
-        dias=v.findViewById(R.id.dias_label);
-        dias.setText(""+med.getDiasRestantes());
+        View v = view;
+
+            if (view == null) {
+                LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                v = inflater.inflate(R.layout.medicamentos_items, null);
+            }
+
+            name = v.findViewById(R.id.activity_medicamento_medicamento_label);
+            name.setText(med.getNombre());
+            miligramos = v.findViewById(R.id.activity_medicamento_miligramos_label);
+            miligramos.setText("" + med.getCantidad());
+            cantidad = v.findViewById(R.id.activity_medicamento_cantidad_label);
+            cantidad.setText("" + med.getDosis());
+            dias = v.findViewById(R.id.activity_medicamento_dias_label);
+            dias.setText("" + med.getDiasRestantes());
+            //dias.setText("" + days);
+            image = v.findViewById(R.id.activity_medicamento_med_image);
+            switch (med.getTipoMedicamento()) {
+                case Medicamento.MEDICAMENTO_JARABE:
+                    image.setImageResource(R.drawable.jarabe_icon);
+                    break;
+                case Medicamento.MEDICAMENTO_INYECCION:
+                    image.setImageResource(R.drawable.inyeccion_icon);
+                    break;
+                case Medicamento.MEDICAMENTO_PASTILLA:
+                    image.setImageResource(R.drawable.cap_icon);
+                    break;
+            }
+
         return v;
     }
+
+
 }

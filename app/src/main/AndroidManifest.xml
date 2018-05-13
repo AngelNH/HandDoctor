@@ -29,7 +29,11 @@
         <activity android:name=".ActivityMedicamento" />
         <activity android:name=".ActivityRecetar" />
         <activity android:name=".ActivityAdd" />
-        <activity android:name=".ActivityMedicalProfile"></activity>
+        <activity android:name=".ActivityMedicalProfile" />
+        <activity android:name=".ActivityChat" />
+        <activity android:name=".ActivityRoomChat" />
+        <activity android:name=".ActivityAddChat" />
+        <activity android:name=".ActivityContactos"></activity>
     </application>
 
 </manifest>

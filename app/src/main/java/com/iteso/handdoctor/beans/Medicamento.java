@@ -16,8 +16,10 @@ public class Medicamento {
     private String dosis;
     private int diasRestantes;
     private int tipoMedicamento;
+    private String expiration;
 
     private String idPaciente;
+    public Medicamento(){}
 
     public Medicamento(String nombre, String cantidad, String dosis, int diasRestantes, int tipoMedicamento) {
         this.nombre = nombre;
@@ -72,6 +74,13 @@ public class Medicamento {
         return tipoMedicamento;
     }
 
+    public String getExpiration() {
+        return expiration;
+    }
+
+    public void setExpiration(String expiration) {
+        this.expiration = expiration;
+    }
 
     public void setTipoMedicamento(int tipoMedicamento) {
         this.tipoMedicamento = tipoMedicamento;
@@ -84,6 +93,7 @@ public class Medicamento {
                 ", dosis='" + dosis + '\'' +
                 ", diasRestantes=" + diasRestantes +
                 ", tipoMedicamento=" + tipoMedicamento +
+                ", expiration=" + expiration +
                 ", idPaciente=" + idPaciente + '\'' +
                 '}';
     }

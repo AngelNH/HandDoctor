@@ -2,6 +2,7 @@ package com.iteso.handdoctor.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.iteso.handdoctor.ActivityExpedient;
+import com.iteso.handdoctor.ActivityMain;
+import com.iteso.handdoctor.ActivityMedicalProfile;
 import com.iteso.handdoctor.R;
 import com.iteso.handdoctor.beans.Paciente;
 
@@ -28,10 +32,12 @@ public class AdapterPaciente extends BaseAdapter{
 
     private TextView email;
     private TextView phone;
+    Context context;
 
-    public AdapterPaciente(Activity activity, ArrayList<Paciente> pacientes){
+    public AdapterPaciente(Activity activity, ArrayList<Paciente> pacientes,Context context){
         this.activity = activity;
         this.pacientes=pacientes;
+        this.context = context;
     }
     @Override
     public int getCount() {
@@ -79,6 +85,9 @@ public class AdapterPaciente extends BaseAdapter{
             @Override
             public void onClick(View v) {
                 Toast.makeText(AdapterPaciente.activity,"Mensaje de que le pico al paciente "+pac.getName(),Toast.LENGTH_LONG).show();//TODO mostrar los datos del paciente.
+                Intent intent = new Intent(context,ActivityMedicalProfile.class);
+                intent.putExtra("ID_PAC",pac.getPhone());
+                v.getContext().startActivity(intent);
             }
         });
         return v;

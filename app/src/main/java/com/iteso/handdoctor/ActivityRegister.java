@@ -94,7 +94,6 @@ public class ActivityRegister extends AppCompatActivity {
             }
 
             if (any) {
-                //TODO save the login, in phone.
                 SharedPreferences sharedPreferences = getSharedPreferences("com.iteso.HANDDOCTOR_PREFERENCES",MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("NAME",email.getText().toString());

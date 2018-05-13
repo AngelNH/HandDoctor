@@ -22,7 +22,7 @@ public class ActivitySplash extends AppCompatActivity {
                 loadUser();
                 Intent intent;
                 if (isLogged){
-                    intent = new Intent(ActivitySplash.this,ActivityMain.class);
+                    intent  = new Intent(ActivitySplash.this,ActivityMain.class);
                 }else{
                     intent = new Intent(ActivitySplash.this,ActivityLogin.class);
                 }

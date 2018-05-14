@@ -28,8 +28,11 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.iteso.handdoctor.beans.Paciente;
 
 import java.io.IOException;
@@ -46,11 +49,12 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
     String gen_id, type;
     EditText editText;
     ImageButton imageButton;
+    String lon,lat,nameDoc;
 
-
+    boolean isPatient;
     EditText address;
     Button search;
-    FloatingActionButton plusButton;
+    FloatingActionButton plusButton,consultorio;
 
 
     DatabaseReference databaseReference;
@@ -60,8 +64,16 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_maps);
             loadID();
-
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null)
+        {
+            lon = bundle.getString("LON");
+            lat = bundle.getString("LAT");
+            nameDoc = bundle.getString("NAME");
+        }
+        isPatient=false;
             databaseReference = FirebaseDatabase.getInstance().getReference();
+
 
             int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
 
@@ -76,6 +88,7 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
             }
             FloatingActionsMenu floatingActionsMenu = findViewById(R.id.floatingActionsMenu);
             com.getbase.floatingactionbutton.FloatingActionButton floatingActionButton = findViewById(R.id.activity_maps_add_location);
+            consultorio = findViewById(R.id.activity_maps_contact_a);
             imageButton = findViewById(R.id.activity_maps_btn_search);
             editText= findViewById(R.id.activity_maps__edt_address);
             if (type.equals(""+ Paciente.PACIENTE)) {
@@ -83,11 +96,14 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
                 floatingActionButton.setVisibility(View.GONE);
                 imageButton.setVisibility(View.GONE);
                 editText.setVisibility(View.GONE);
+                consultorio.setTitle(nameDoc);
+                isPatient=true;
             }else if (type.equals(""+ Paciente.DOCTOR)) {
                 floatingActionButton.setVisibility(View.VISIBLE);
                 floatingActionsMenu.setVisibility(View.GONE);
                 editText.setVisibility(View.VISIBLE);
                 imageButton.setVisibility(View.VISIBLE);
+                isPatient=false;
             }
         }
 
@@ -106,16 +122,22 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        latitud=20.658123;
-        longitud=-103.389667;
 
 //        UiSettings uiSettings = mMap.getUiSettings();
 //        uiSettings.setZoomControlsEnabled(true);
         //Agregar la direccion del medico.
         //(Solicitar a consultorio ó dar de alta desde aqui)
-        LatLng main = new LatLng(latitud,longitud);
-        mMap.addMarker(new MarkerOptions().position(main).title("Main Marker"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(main,15));
+        if (isPatient){
+            latitud= Double.parseDouble(lat);
+            longitud =Double.parseDouble(lon);
+            LatLng main = new LatLng(latitud,longitud);
+            mMap.addMarker(new MarkerOptions().position(main).title("Consultorio: "+nameDoc));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(main,15));
+        }else {
+            LatLng gdl = new LatLng(20.6775,-103.3335);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(gdl,14));
+        }
+
 //
 //
 //        LatLng doctor1 = new LatLng(20.666551,-103.33335);
@@ -191,6 +213,9 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+    public void goConsul (View view){
+
+    }
     public void searchLocation(View view) {
         Geocoder geocoder = new Geocoder(this, new Locale("es", "MX"));
         try {

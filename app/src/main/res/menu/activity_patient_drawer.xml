@@ -15,23 +15,26 @@
         <item
             android:id="@+id/activity_nav_patient_medicalPreview"
             android:icon="@drawable/ic_receta_black_24dp"
-            android:title="Cuestionario Médico" />
+            android:title="Cuestionario Médico"
+            android:visible="false"/>
         <item
             android:id="@+id/activity_nav_patient_chat"
             android:icon="@drawable/ic_group_chat_"
             android:title="Chat" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="">
         <menu>
             <item
                 android:id="@+id/activity_nav_patient_config"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="Ajustar Perfil" />
+                android:title="Ajustar Perfil"
+                android:visible="false"/>
             <item
                 android:id="@+id/activity_nav_patient_maps"
                 android:icon="@drawable/ic_map_black_24dp"
-                android:title="Mapa de consultorios" />
+                android:title="Mapa de consultorios"
+                android:visible="false"/>
         </menu>
     </item>
 

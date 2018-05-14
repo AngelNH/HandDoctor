@@ -32,12 +32,13 @@
             android:title="Chat" />
     </group>
 
-    <item android:title="">
+    <item android:title="Administracion">
         <menu>
             <item
                 android:id="@+id/activity_nav_doctor_config"
                 android:icon="@drawable/ic_menu_manage"
                 android:title="Ajustar Perfil"
+                android:visible="false"
                 />
             <item
                 android:id="@+id/activity_nav_doctor_maps"

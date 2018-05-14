@@ -197,7 +197,7 @@
             android:id="@+id/activity_medical_edt_chronic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/whichChronic"
+            android:hint="Which Chronic"
             android:gravity="center" />
 
 

@@ -83,19 +83,17 @@ public class ActivityMedicalProfile extends AppCompatActivity {
     }
 
     public void loadIDPaciente(){
-
-        id_pac = "3299085648";
         Bundle bundle = getIntent().getExtras();
 
-        if (bundle.getString("ID_PAC") != null){
+        if (bundle !=null){
             id_pac = bundle.getString("ID_PAC");
         }
         Log.e("PROFILE","idpaciente "+id_pac);
     }
     public void loadOnView(){
-        Log.e("FIREBASE_ACT_PROFILE","gender: "+expediente.getGender());
+        Log.e("FIREBASE_ACT_PROFILE","gender: "+expediente.getGenderN());
         name.setText(pacName);
-        gender.setText(expediente.getGender());
+        gender.setText(""+expediente.getGenderN());
         Log.e("FIREBASE_ACT_PROFILE","age: "+expediente.getAge());
         age.setText(expediente.getAge());
         direction.setText(expediente.getDirection());

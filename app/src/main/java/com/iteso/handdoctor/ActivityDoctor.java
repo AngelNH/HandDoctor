@@ -20,6 +20,7 @@ import android.widget.CalendarView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -40,6 +41,8 @@ public class ActivityDoctor extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
+    TextView nameNav, emailNav;
+
     CalendarView calendarView;
     TextView date, hour, name, motive;
     ArrayList<Citas> citas;
@@ -55,6 +58,7 @@ public class ActivityDoctor extends AppCompatActivity
     LinearLayout appointment;
     boolean pacNameReady;
     ArrayList<Paciente> pacientes;
+    String nameDocActual,emailDocActual;
 
 
 
@@ -109,6 +113,9 @@ public class ActivityDoctor extends AppCompatActivity
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                nameDocActual= dataSnapshot.child("Doctor").child(id_doc).child("name").getValue(String.class);
+                emailDocActual= dataSnapshot.child("Doctor").child(id_doc).child("email").getValue(String.class);
+
                 for (DataSnapshot data : dataSnapshot.child("Doctor").child(id_doc).child("Citas").getChildren()) {
                     Citas cita = data.getValue(Citas.class);
                     citas.add(cita);
@@ -124,13 +131,11 @@ public class ActivityDoctor extends AppCompatActivity
 
 
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
-
         //get today´s date
         today = Calendar.getInstance().getTime();
         calendarView.setDate(today.getTime());

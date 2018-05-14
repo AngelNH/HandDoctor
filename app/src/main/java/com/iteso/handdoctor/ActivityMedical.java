@@ -151,21 +151,28 @@ public class ActivityMedical extends AppCompatActivity {
                 Expediente expediente = new Expediente();
                 expediente.setId(id.getText().toString());
                 //gender
-                if (female.isChecked())
-                    expediente.setGender(Expediente.GENDER_FEMALE);
-                else if (male.isChecked())
-                    expediente.setGender(Expediente.GENDER_MALE);
+                if (female.isChecked()) {
+                    expediente.setGenderN(Expediente.GENDER_FEMALE);
+                    expediente.setGender("Female");
+                } else if (male.isChecked()) {
+                    expediente.setGenderN(Expediente.GENDER_MALE);
+                    expediente.setGender("Masculine");
+                }
                 expediente.setAge(age.getText().toString());
                 expediente.setDirection(from.getText().toString());
                 expediente.setNationality(nationality.getText().toString());
                 expediente.setReligion(religion.getText().toString());
                 //civil state
-                if (single.isChecked())
+                if (single.isChecked()) {
                     expediente.setCivil(Expediente.CIVIL_SINGLE);
-                else if (married.isChecked())
+                    expediente.setCivilS("Single");
+                } else if (married.isChecked()) {
                     expediente.setCivil(Expediente.CIVIL_MARRIED);
-                else if (divorced.isChecked())
-                    expediente.setCivil(Expediente.CIVIL_DIVORCED);
+                    expediente.setCivilS("Married");
+                }else if (divorced.isChecked()) {
+                expediente.setCivil(Expediente.CIVIL_DIVORCED);
+                    expediente.setCivilS("Divorced");
+                }
                 //actual medication
                 if (yesMedicament.isChecked())
                     expediente.setActualMedication(medicament.getText().toString());
@@ -184,7 +191,7 @@ public class ActivityMedical extends AppCompatActivity {
                 //add to firebase
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
                 databaseReference.child("Expediente").child(expediente.getId()).setValue(expediente);
-                Intent intent = new Intent(ActivityMedical.this,ActivityMain.class);
+                Intent intent = new Intent(ActivityMedical.this,ActivityDoctor.class);
                 startActivity(intent);
                 finish();
             }

@@ -1,5 +1,6 @@
 package com.iteso.handdoctor;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -65,6 +66,19 @@ public class ActivityCitasPaciente extends AppCompatActivity {
 
 
         listView.setAdapter(ad);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String lon = cp.get(position).getConsultorioLon();
+                String lat = cp.get(position).getConsultorioLat();
+                String name = cp.get(position).getName_doc();
+                Intent i = new Intent(ActivityCitasPaciente.this,ActivityMaps.class);
+                i.putExtra("LAT",lat);
+                i.putExtra("LON",lon);
+                i.putExtra("NAME",name);
+                startActivity(i);
+            }
+        });
         //Log.e("FIREBASE",citas.toString());
     }
     public void loadID(){

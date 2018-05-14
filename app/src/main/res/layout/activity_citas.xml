@@ -99,7 +99,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Agendar"
-            android:onClick="agendarBtn"/>
+            android:onClick="agendarBtn"
+            android:background="@drawable/boton_recetar"
+            android:textColor="@color/colorLogIng"/>
     </LinearLayout>
 
 </ScrollView>

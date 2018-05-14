@@ -27,6 +27,7 @@
         android:layout_height="150dp"
         android:orientation="horizontal"
         android:layout_gravity="bottom"
+        android:onClick="goToMap"
         >
         <ImageView
             android:id="@+id/cita_image"

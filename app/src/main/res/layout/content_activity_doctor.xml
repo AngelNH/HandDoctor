@@ -8,7 +8,7 @@
     tools:context="com.iteso.handdoctor.ActivityDoctor"
     tools:showIn="@layout/app_bar_activity_doctor"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:padding="20dp">
     <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"

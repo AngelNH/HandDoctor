@@ -7,22 +7,26 @@
     android:layout_height="match_parent"
     tools:context="com.iteso.handdoctor.ActivitySplash"
     android:orientation="vertical"
-    android:background="@color/colorBackgroundBlack">
+    android:background="@color/colorBackgroundBlack"
+    android:gravity="center"
+    android:padding="20dp"
+    >
 
 
 
     <ImageView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/hand_doctor_logo" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/startApp"
-        android:textSize="30sp"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/colorTextLight"/>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/startApp"-->
+        <!--android:textSize="30sp"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:textColor="@color/colorTextLight"/>-->
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

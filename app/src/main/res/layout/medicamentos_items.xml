@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/background_light"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/activity_medicamento_med_image"

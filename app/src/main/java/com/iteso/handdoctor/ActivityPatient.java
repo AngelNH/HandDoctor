@@ -203,4 +203,6 @@ public class ActivityPatient extends AppCompatActivity
         Toast.makeText(this,"You just Logged out", Toast.LENGTH_SHORT).show();
         finish();
     }
+
+
 }

@@ -6,7 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.iteso.handdoctor.ActivityRecetar">
+    tools:context="com.iteso.handdoctor.ActivityRecetar"
+    android:padding="30dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +17,9 @@
             android:layout_height="wrap_content"
             android:text="Recetas"
             android:layout_marginBottom="20dp"
+            android:gravity="center"
             android:textSize="30sp"/>
+
         <EditText
             android:id="@+id/activity_recetar_edt_id"
             android:layout_width="match_parent"
@@ -117,9 +120,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/colorLogIng"
+            android:background="@drawable/boton_recetar"
             android:layout_margin="10dp"
-            android:text="Recetar"/>
+            android:stateListAnimator="@null"
+
+            android:text="Recetar"
+            />
 
     </LinearLayout>
 </ScrollView>

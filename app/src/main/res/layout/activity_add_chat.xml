@@ -89,6 +89,8 @@
             android:id="@+id/activity_add_chat_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/boton_recetar"
+            android:textColor="@color/colorLogIng"
             android:text="add"
             />
 

@@ -91,10 +91,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textAutoComplete"
-                android:textSize="30sp"
-                android:hint="Escribir aqui"
+                android:textSize="24sp"
+                android:hint="Escribir aquí"
                 android:background="@android:color/white"
                 android:paddingStart="10dp"
+                android:paddingRight="35dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
                 android:textStyle="italic"
                 android:layout_centerVertical="true"/>
 

@@ -139,9 +139,6 @@ public class ActivityMedicamento extends AppCompatActivity {
         SharedPreferences sharedPreferences =
                 getSharedPreferences("com.iteso.HANDDOCTOR_PREFERENCES",MODE_PRIVATE);
         id_pac = sharedPreferences.getString("ID","555");
-        //TODO erase this
-        id_pac = "3321450978";
-        //
         sharedPreferences = null;
     }
 }

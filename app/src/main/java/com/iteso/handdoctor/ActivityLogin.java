@@ -63,11 +63,13 @@ public class ActivityLogin extends AppCompatActivity {
 
         if (compareToFirebase(user.getText().toString(),password.getText().toString())){
             if(state == Paciente.DOCTOR || state == Paciente.SECRETARIA) {
-                Intent intent = new Intent(ActivityLogin.this, ActivityMain.class);
+                Intent intent = new Intent(ActivityLogin.this, ActivityDoctor.class);
                 startActivity(intent);
                 finish();
             }else if(state == Paciente.PACIENTE){
-                //TODO se va a la pantalla principal del Paciente.
+                Intent intent = new Intent(ActivityLogin.this, ActivityPatient.class);
+                startActivity(intent);
+                finish();
             }
         }else{
             Toast.makeText(this,"incorrect password or user, try again",Toast.LENGTH_SHORT).show();
@@ -90,7 +92,7 @@ public class ActivityLogin extends AppCompatActivity {
                 editor.putString("NAME",users.get(i).getUser());
                 editor.putString("PWD",users.get(i).getPassword());
                 editor.putString("ID",users.get(i).getId());
-                editor.putString("TYPE",""+state);
+                editor.putString("TYPE",""+users.get(i).getState());
                 editor.putBoolean("LOGGED",true);
                 editor.apply();
                 state = users.get(i).getState();

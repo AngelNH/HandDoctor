@@ -43,12 +43,14 @@
                 android:id="@+id/activity_citas_paciente_especialidad_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ginecologa"/>
+                android:text="Ginecologa"
+                 android:textSize="17sp"
+                 android:textColor="@color/colorPrimary"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingBottom="10dp">
             <TextView
@@ -56,6 +58,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="25/04/2018"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
                 android:paddingRight="5dp"/>
 
             <TextView
@@ -63,6 +67,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="12 pm"
+                android:textSize="20sp"
+                android:textColor="@android:color/holo_green_dark"
                 android:paddingRight="10dp"/>
 
         </LinearLayout>

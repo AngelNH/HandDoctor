@@ -48,11 +48,12 @@ public class ActivityAgenda extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        pacientes = new ArrayList<>();
-        actual_cita = 0;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__agenda);
 
+        pacientes = new ArrayList<>();
+        actual_cita = 0;
         calendarView = findViewById(R.id.activity_agenda_calendar);
         date = findViewById(R.id.activity_agenda_date);
         hour = findViewById(R.id.activity_ageda_hour);

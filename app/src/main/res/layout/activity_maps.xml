@@ -1,8 +1,155 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.iteso.handdoctor.ActivityMaps" />
+    tools:context="com.iteso.handdoctor.ActivityMaps"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            >
+
+        </fragment>
+
+
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/floatingActionsMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="63dp"
+            map:fab_addButtonColorNormal="#e77b27"
+            map:fab_addButtonColorPressed="#b64b04"
+            map:fab_addButtonSize="mini"
+            map:fab_labelStyle="@style/activity_maps_show_options"
+            android:visibility="visible">
+
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/activity_maps_contact_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                map:fab_addButtonSize="mini"
+                map:fab_colorNormal="#b1b1b1"
+                map:fab_icon="@drawable/ic_contact_person"
+                map:fab_title="Dr. Hernandez"
+                android:visibility="visible"/>
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/activity_maps_contact_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                map:fab_addButtonSize="mini"
+                map:fab_colorNormal="#b1b1b1"
+                map:fab_icon="@drawable/ic_contact_person"
+                map:fab_title="Dr. De Anda"
+                android:visibility="visible"/>
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/activity_maps_contact_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                map:fab_addButtonSize="mini"
+                map:fab_colorNormal="#b1b1b1"
+                map:fab_icon="@drawable/ic_contact_person"
+                map:fab_title="Dr. Gonzalez"
+                android:visibility="visible"/>
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/activity_maps_contact_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                map:fab_addButtonSize="mini"
+                map:fab_colorNormal="#b1b1b1"
+                map:fab_icon="@drawable/ic_contact_person"
+                map:fab_title="Dr. Moreno"
+                android:visibility="visible"/>
+
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/activity_maps_add_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="63dp"
+
+            android:onClick="addLocation"
+            map:fab_colorNormal="#1e8baf"
+            map:fab_icon="@drawable/ic_add_consultorio"
+            map:fab_title="Agregar Consultorio"
+            map:fab_size="mini"
+            android:visibility="visible"/>
+        <!--<android.support.design.widget.FloatingActionButton-->
+
+        <!--android:id="@+id/activity_maps_action_button"-->
+
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginBottom="12dp"-->
+        <!--android:layout_marginEnd="13dp"-->
+        <!--android:src="@drawable/icon_plus_slide" />-->
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:visibility="visible"
+            >
+            <EditText
+                android:id="@+id/activity_maps__edt_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textAutoComplete"
+                android:textSize="30sp"
+                android:hint="Escribir aqui"
+                android:background="@android:color/white"
+                android:paddingStart="10dp"
+                android:textStyle="italic"
+                android:layout_centerVertical="true"/>
+
+            <ImageButton
+                android:id="@+id/activity_maps_btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/activity_maps__edt_address"
+                android:src="@android:drawable/ic_menu_search"
+                android:onClick="searchLocation"
+                android:layout_centerVertical="true"
+                android:background="#fff"
+
+                />
+        </RelativeLayout>
+
+
+
+        <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:text="Buscar"/>-->
+    </RelativeLayout>
+</LinearLayout>
+
+

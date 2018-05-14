@@ -4,34 +4,46 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+        <!--
         <item
-            android:id="@+id/activity_nav_citasMedicas"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Citas Médicas" />
+            android:id="@+id/activity_nav_doctor_agenda"
+            android:icon="@drawable/ic_calendar_black_24dp"
+            android:title="Agenda" />
+            -->
         <item
-            android:id="@+id/activity_nav_medicamentos"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Medicamentos" />
+            android:id="@+id/activity_nav_doctor_expediente"
+            android:icon="@drawable/ic_expedient_black_24dp"
+            android:title="Expediente" />
         <item
-            android:id="@+id/activity_nav_medicalPreview"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Cuestionario médico" />
+            android:id="@+id/activity_nav_doctor_cita"
+            android:icon="@drawable/ic_cita_black_24dp"
+            android:title="Cita" />
         <item
-            android:id="@+id/activity_nav_chat"
-            android:icon="@drawable/ic_menu_send"
+            android:id="@+id/activity_nav_doctor_receta"
+            android:icon="@drawable/ic_receta_black_24dp"
+            android:title="Recetar" />
+        <item
+            android:id="@+id/activity_nav_doctor_addPaciente"
+            android:icon="@drawable/ic_person_add_black_24dp"
+            android:title="Añadir Paciente" />
+        <item
+            android:id="@+id/activity_nav_doctor_chat"
+            android:icon="@drawable/ic_group_chat_"
             android:title="Chat" />
     </group>
 
     <item android:title="">
         <menu>
             <item
-                android:id="@+id/activity_nav_share"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="Recordatorios" />
-            <item
-                android:id="@+id/nav_send"
+                android:id="@+id/activity_nav_doctor_config"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="Ajustes" />
+                android:title="Ajustar Perfil"
+                />
+            <item
+                android:id="@+id/activity_nav_doctor_maps"
+                android:icon="@drawable/ic_map_black_24dp"
+                android:title="Agregar Consultorio" />
+
         </menu>
     </item>
 

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import android.widget.RadioButton;
@@ -102,15 +103,19 @@ public class ActivityRegister extends AppCompatActivity {
                 editor.putString("NAME",email.getText().toString());
                 editor.putString("PWD",password1.getText().toString());
                 editor.putBoolean("LOGGED",true);
+                editor.putString("TYPE",""+state);
                 editor.putString("ID",id);
                 editor.apply();
+                Log.e("ACTIVITY_REG","Type: "+state);
                 //check the state of the person.
                 if (state == Paciente.DOCTOR || state == Paciente.SECRETARIA) {
-                    Intent intent = new Intent(ActivityRegister.this, ActivityMain.class);
+                    Intent intent = new Intent(ActivityRegister.this, ActivityDoctor.class);
                     startActivity(intent);
                     finish();
                 }else if(state == Paciente.PACIENTE){
-                    //TODO mandar a la pantalla principal del paciente.
+                    Intent intent = new Intent(ActivityRegister.this, ActivityPatient.class);
+                    startActivity(intent);
+                    finish();
                 }
             }else{
                 Toast.makeText(ActivityRegister.this,"Falta Seleccionar una opción",Toast.LENGTH_LONG).show();

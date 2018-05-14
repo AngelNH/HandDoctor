@@ -89,13 +89,14 @@ public class ActivityCitas extends AppCompatActivity {
     }
 
     public void agendarBtn(View view){
-        Intent intent = new Intent(ActivityCitas.this,ActivityMain.class);
+        Intent intent = new Intent(ActivityCitas.this,ActivityDoctor.class);
         cita = new Citas(id_doctor,id_text.getText().toString(),appDate,hour);
         cita.setMotive(motivo.getText().toString());
         fillCitaPac();
         getPacName();
         saveOnFirebase();
         startActivity(intent);
+        finish();
     }
 
     public void fillCitaPac(){

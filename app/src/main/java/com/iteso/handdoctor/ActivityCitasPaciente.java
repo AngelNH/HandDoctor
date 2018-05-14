@@ -1,5 +1,6 @@
 package com.iteso.handdoctor;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,20 +22,16 @@ import java.util.Map;
 
 public class ActivityCitasPaciente extends AppCompatActivity {
     String id;
+    AdapterCitasPacientes ad;
     DatabaseReference databaseReference;
     ListView listView;
     ArrayList<CitasPaciente> cp = new ArrayList<>();
     //Map<String,CitasPaciente> citas = new HashMap<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //erase these
-        id = "3299085648";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citas_paciente);
         listView = findViewById(R.id.citaspaciente_list_view);
-
-        //cp.add(new CitasPaciente("Vicky", "12/05/2018", "12.322", "13.23231", "Ginecología", "3:00pm"));
-        //cp.add(new CitasPaciente("Miguel", "14/05/2018", "12.322", "13.23231", "Ginecología", "3:00pm"));
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -43,7 +40,9 @@ public class ActivityCitasPaciente extends AppCompatActivity {
                 final int pos = position;
             }
         });
-
+        loadID();
+        ad= new AdapterCitasPacientes(this, cp);
+        id= "3318275490";
         //Firebase
         databaseReference = FirebaseDatabase.getInstance().getReference();
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -54,6 +53,8 @@ public class ActivityCitasPaciente extends AppCompatActivity {
                     cp.add(cita);
                     Log.e("ACTIVITY_CITAS_PAC",cita.toString());
                 }
+                ad.notifyDataSetChanged();
+                listView.deferNotifyDataSetChanged();
             }
 
             @Override
@@ -62,9 +63,15 @@ public class ActivityCitasPaciente extends AppCompatActivity {
             }
         });
 
-        AdapterCitasPacientes ad = new AdapterCitasPacientes(this, cp);
+
         listView.setAdapter(ad);
         //Log.e("FIREBASE",citas.toString());
+    }
+    public void loadID(){
+        SharedPreferences sharedPreferences =
+                getSharedPreferences("com.iteso.HANDDOCTOR_PREFERENCES",MODE_PRIVATE);
+        id = sharedPreferences.getString("ID","555");
+        sharedPreferences = null;
     }
 
 

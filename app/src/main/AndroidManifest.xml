@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -21,7 +22,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/hand_doctor_icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".ActivityMain" />
         <activity android:name=".ActivityAgenda" />
         <activity android:name=".ActivityExpedient" />
@@ -62,6 +63,8 @@
         <activity android:name=".ActivityChat" />
         <activity android:name=".ActivityRoomChat" />
         <activity android:name=".ActivityAddChat" />
+        <activity android:name=".ActivityPatient" />
+        <activity android:name=".ActivityDoctor" />
         <activity android:name=".ActivityContactos"></activity>
 
     </application>

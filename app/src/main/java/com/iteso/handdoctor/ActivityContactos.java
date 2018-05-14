@@ -131,6 +131,9 @@ public class ActivityContactos extends AppCompatActivity {
 
 
                 if (newContact.size()>0){
+                    //
+                    contactos=newContact;
+                    //
                     contactList.clearChoices();
                     adapterContactos = new AdapterContactos(ActivityContactos.this,newContact);
                     contactList.setAdapter(adapterContactos);
@@ -178,7 +181,30 @@ public class ActivityContactos extends AppCompatActivity {
                     }
                     databaseReference.child("Salas").child(id_chat).setValue(new Room(nameDoc,namePac,Long.valueOf("4"),""));
 
+                    Intent i = new Intent(ActivityContactos.this,ActivityChat.class);
+                    i.putExtra("ID_CHAT",id_chat);
+                    i.putExtra("DOC_NAME",nameDoc);
+                    i.putExtra("PAC_NAME",namePac);
+                    i.putExtra("TYPE",type);
+                    startActivity(i);
+                    finish();
 
+                } else{
+                    String namePac="NOP", nameDoc= "NOP";
+                    if (type.equals(""+Paciente.DOCTOR)) {
+                        namePac = getPacienteByPhone(contactos.get(position).getPhone()).getName();
+                        nameDoc = getDoctorByPhone(gen_id).getName();
+                    }else if (type.equals(""+Paciente.PACIENTE)) {
+                        nameDoc = getDoctorByPhone(contactos.get(position).getPhone()).getName();
+                        namePac = getPacienteByPhone(gen_id).getName();
+                    }
+                    Intent i = new Intent(ActivityContactos.this,ActivityChat.class);
+                    i.putExtra("ID_CHAT",contactos.get(position).getChat());
+                    i.putExtra("DOC_NAME",nameDoc);
+                    i.putExtra("PAC_NAME",namePac);
+                    i.putExtra("TYPE",type);
+                    startActivity(i);
+                    finish();
                 }
             }
         });

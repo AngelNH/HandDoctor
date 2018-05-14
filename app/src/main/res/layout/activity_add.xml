@@ -62,7 +62,7 @@
             android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/colorPrimary"
-            android:text="Joceline"/>
+            android:text=""/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -82,7 +82,7 @@
             android:layout_marginLeft="20dp"
             android:textSize="20dp"
             android:textColor="@color/colorPrimary"
-            android:text="331235435"/>
+            android:text=""/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -102,7 +102,7 @@
             android:layout_marginLeft="20dp"
             android:textSize="20dp"
             android:textColor="@color/colorPrimary"
-            android:text="jocelinearr@gmail.com"/>
+            android:text=""/>
     </LinearLayout>
 
     <Button

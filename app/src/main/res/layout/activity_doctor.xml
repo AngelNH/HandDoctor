@@ -9,17 +9,16 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/app_bar_activity_patient"
+        layout="@layout/app_bar_activity_doctor"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_activity_patient"
-        app:menu="@menu/activity_patient_drawer" />
+        app:headerLayout="@layout/nav_header_activity_doctor"
+        app:menu="@menu/activity_doctor_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

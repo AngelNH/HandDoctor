@@ -64,8 +64,8 @@ public class ActivityChat extends AppCompatActivity {
         sendimg = findViewById(R.id.activity_chat_send_img);
 
 
-        if (type.equals(""+Paciente.DOCTOR))nombre.setText(pacName);
-        else if (type.equals(""+Paciente.PACIENTE))nombre.setText(docName);
+        if (type.equals(""+Paciente.DOCTOR))nombre.setText(docName);
+        else if (type.equals(""+Paciente.PACIENTE))nombre.setText(pacName);
 
         databaseParent = FirebaseDatabase.getInstance().getReference();
         databaseReference = FirebaseDatabase.getInstance().getReference("Chats");//we add the fb part
@@ -113,6 +113,7 @@ public class ActivityChat extends AppCompatActivity {
                 MessageReceiver m = dataSnapshot.getValue(MessageReceiver.class);
                 if(m.getName().equals(nombre.getText().toString())){
                     adapter.addForeingMensaje(m);
+                    return;
                 }
                 adapter.addMensaje(m);
             }

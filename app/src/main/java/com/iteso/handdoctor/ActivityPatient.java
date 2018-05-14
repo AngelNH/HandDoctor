@@ -1,5 +1,7 @@
 package com.iteso.handdoctor;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,15 +14,62 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 
-public class activity_patient extends AppCompatActivity
+import java.util.Timer;
+import java.util.TimerTask;
+
+import android.widget.Toast;
+import android.widget.ViewSwitcher.ViewFactory;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
+public class ActivityPatient extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private ImageSwitcher imageSwitcher;
+    private int[] gallery = { R.drawable.advice, R.drawable.advice1, R.drawable.advice2,
+            R.drawable.advice3, R.drawable.advice4};
+
+    private int position;
+
+    private static final Integer DURATION = 10000;
+
+    private Timer timer = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
+        //VICKY
+        imageSwitcher =  findViewById(R.id.advice);
+        imageSwitcher.setFactory(new ViewFactory() {
+
+            public View makeView() {
+                return new ImageView(ActivityPatient.this);
+            }
+        });
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        Animation fadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+        imageSwitcher.setInAnimation(fadeIn);
+        imageSwitcher.setOutAnimation(fadeOut);
+
+        if (timer != null) {
+            timer.cancel();
+        }
+        position = 0;
+        startSlider();
+
+
+
+
+
+
+        //LEO/&//////////////////////////////////////////////
+        Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -41,6 +90,45 @@ public class activity_patient extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+    ////////////////////////////////////////////////////////////
+
+//VICKYY///////////////////////////////////////////////////////
+    public void startSlider() {
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        imageSwitcher.setImageResource(gallery[position]);
+                        position++;
+                        if (position == gallery.length) {
+                            position = 0;
+                        }
+                    }
+                });
+            }
+
+        }, 0, DURATION);
+    }
+    // Stops the slider when the Activity is going into the background
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (timer != null) {
+            timer.cancel();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (timer != null) {
+            startSlider();
+        }
+
+    }
+    ////////////////////////////////////////////////////////////////////
 
     @Override
     public void onBackPressed() {
@@ -80,22 +168,39 @@ public class activity_patient extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
+        if (id == R.id.activity_nav_patient_citasMedicas) {
+            Intent intent = new Intent(ActivityPatient.this, ActivityCitasPaciente.class);
+            startActivity(intent);
+        } else if (id == R.id.activity_nav_patient_medicamentos) {
+            Intent intent = new Intent(ActivityPatient.this, ActivityMedicamento.class);//falta modificar
+            startActivity(intent);
+        } else if (id == R.id.activity_nav_patient_medicalPreview) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.activity_nav_patient_chat) {
+            Intent intent = new Intent(ActivityPatient.this, ActivityRoomChat.class);//falta modificar
+            startActivity(intent);
+        } else if (id == R.id.activity_nav_patient_config) {
+            Intent intent = new Intent(ActivityPatient.this, ActivityConfigProfile.class);//falta modificar
+            startActivity(intent);
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.activity_nav_patient_maps) {
+            Intent intent = new Intent(ActivityPatient.this, ActivityMaps.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    ///////////////////////////////////////////////////
+    ///////////////Logout de la APP///////////////////
+    public void logOut(MenuItem item) {
+        SharedPreferences sharedPreferences = getSharedPreferences("com.iteso.HANDDOCTOR_PREFERENCES",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+        Toast.makeText(this,"You just Logged out", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

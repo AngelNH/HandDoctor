@@ -45,9 +45,9 @@ public class ActivityMain extends AppCompatActivity {
         return true;
     }
 
-    void agendaBtn(View v){
-        //Intent intent = new Intent(ActivityMain.this,ActivityMedicamento.class);
-        Intent intent = new Intent(ActivityMain.this,ActivityRoomChat.class);
+    public void agendaBtn(View v){
+        Intent intent = new Intent(ActivityMain.this,ActivityDoctor.class);
+        //Intent intent = new Intent(ActivityMain.this,ActivityRoomChat.class);
         //Intent intent = new Intent(ActivityMain.this,ActivityAgenda.class);
         //Intent intent = new Intent(ActivityMain.this,ActivityCitasPaciente.class);
 

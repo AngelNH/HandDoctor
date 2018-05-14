@@ -11,11 +11,13 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.iteso.handdoctor.beans.Paciente;
 import com.iteso.handdoctor.beans.Room;
 import com.iteso.handdoctor.utils.AdapterRoomChat;
 
@@ -29,6 +31,7 @@ public class ActivityRoomChat extends AppCompatActivity {
 
     ArrayList<Room> rooms = new ArrayList<>();
     ArrayList<String> id_chats = new ArrayList<>();
+    ArrayList<String> id_chatsaux = new ArrayList<>();
     DatabaseReference databaseReference;
     AdapterRoomChat adapterRoomChat;
 
@@ -45,18 +48,39 @@ public class ActivityRoomChat extends AppCompatActivity {
         loadID();
         adapterRoomChat = new AdapterRoomChat(ActivityRoomChat.this,rooms,type);
 
+        String person="";
+        if (type.equals(""+ Paciente.DOCTOR))person = "Doctor";
+        else if(type.equals(""+ Paciente.PACIENTE))person = "Paciente";
+
+        databaseReference.child(person).child(gen_id).child("Contactos").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot data : dataSnapshot.getChildren()){
+                    id_chatsaux.add(data.child("chat").getValue(String.class));
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 
         databaseReference.child("Salas").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                chats.clearChoices();
+                //chats.clearChoices();
                 rooms.clear();
                 for(DataSnapshot data : dataSnapshot.getChildren()){
-                    id_chats.add(data.getKey());
-                    Room room = data.getValue(Room.class);
-                    Log.e("ACTIVITY_ROOM","Room: "+room.toString());
-                    rooms.add(room);
-                    adapterRoomChat.notifyDataSetChanged();
+                    String id = data.getKey();
+                    if (id_chatsaux.contains(id)) {
+                        id_chats.add(id);
+                        Room room = data.getValue(Room.class);
+                        Log.e("ACTIVITY_ROOM", "Room: " + room.toString());
+                        rooms.add(room);
+                        adapterRoomChat.notifyDataSetChanged();
+                    }
                 }
             }
 
@@ -97,7 +121,6 @@ public class ActivityRoomChat extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        chats.clearChoices();
 
     }
     public void loadID(){

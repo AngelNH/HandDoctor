@@ -12,7 +12,9 @@ public class Expediente {
     public static final int CIVIL_DIVORCED = 2;
 
     private String id;
-    private int gender;
+    //private int gender;
+    private String gender;
+
     private String age;
     private String direction;
     private String nationality;
@@ -25,9 +27,12 @@ public class Expediente {
     private String blood;
     private String actualDisease;
     private String tension;
+    private int genderN;
+    private String civilS;
 
     public Expediente(){}
-    public Expediente(String id, int gender, String age, String direction, String nationality, String religion, int civil, String actualMedication, String chronic, String weight, String height, String blood, String actualDisease, String tension) {
+
+    public Expediente(String id, String gender, String age, String direction, String nationality, String religion, int civil, String actualMedication, String chronic, String weight, String height, String blood, String actualDisease, String tension, int genderN, String civilS) {
         this.id = id;
         this.gender = gender;
         this.age = age;
@@ -42,7 +47,44 @@ public class Expediente {
         this.blood = blood;
         this.actualDisease = actualDisease;
         this.tension = tension;
+        this.genderN = genderN;
+        this.civilS = civilS;
     }
+    //    public Expediente(String id, int gender, String age, String direction, String nationality, String religion, int civil, String actualMedication, String chronic, String weight, String height, String blood, String actualDisease, String tension, String genderN, String civilS) {
+//        this.id = id;
+//        this.gender = gender;
+//        this.age = age;
+//        this.direction = direction;
+//        this.nationality = nationality;
+//        this.religion = religion;
+//        this.civil = civil;
+//        this.actualMedication = actualMedication;
+//        this.chronic = chronic;
+//        this.weight = weight;
+//        this.height = height;
+//        this.blood = blood;
+//        this.actualDisease = actualDisease;
+//        this.tension = tension;
+//        this.genderN = genderN;
+//        this.civilS = civilS;
+//    }
+
+//    public Expediente(String id, int gender, String age, String direction, String nationality, String religion, int civil, String actualMedication, String chronic, String weight, String height, String blood, String actualDisease, String tension) {
+//        this.id = id;
+//        this.gender = gender;
+//        this.age = age;
+//        this.direction = direction;
+//        this.nationality = nationality;
+//        this.religion = religion;
+//        this.civil = civil;
+//        this.actualMedication = actualMedication;
+//        this.chronic = chronic;
+//        this.weight = weight;
+//        this.height = height;
+//        this.blood = blood;
+//        this.actualDisease = actualDisease;
+//        this.tension = tension;
+//    }
 
     @Override
     public String toString() {
@@ -73,14 +115,14 @@ public class Expediente {
     }
 
     public String getGender() {
-        if (this.gender == this.GENDER_FEMALE)return "femenino";
+        if (this.genderN == this.GENDER_FEMALE)return "femenino";
         return "masculino";
     }
     public int getGenderN() {
-       return this.gender;
+       return this.genderN;
     }
 
-    public void setGender(int gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -185,4 +227,11 @@ public class Expediente {
         this.tension = tension;
     }
 
+    public void setGenderN(int genderN) {
+        this.genderN = genderN;
+    }
+
+    public void setCivilS(String civilS) {
+        this.civilS = civilS;
+    }
 }

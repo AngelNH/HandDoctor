@@ -1,5 +1,6 @@
 package com.iteso.handdoctor;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +35,7 @@ public class ActivityExpedient extends AppCompatActivity {
     EditText input;
     Button search;
     AdapterPaciente adapter;
+    ArrayList<String>ids_Expedient= new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,10 +94,15 @@ public class ActivityExpedient extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot data : dataSnapshot.child("Expediente").getChildren()){
+                    ids_Expedient.add(data.getKey());
+                }
                 for (DataSnapshot data : dataSnapshot.child("Doctor").child(id).child("Pacientes").getChildren()){
-                    Paciente pac = data.getValue(Paciente.class);
-                    pacientes.add(pac);
-                    Log.e("FIREBASE_PACIENTE",pac.toString());
+                    if (ids_Expedient.contains(data.getKey())) {
+                        Paciente pac = data.getValue(Paciente.class);
+                        pacientes.add(pac);
+                        Log.e("FIREBASE_PACIENTE", pac.toString());
+                    }
                 }
             }
 
@@ -112,10 +119,12 @@ public class ActivityExpedient extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final int pos = position;
-                //CODIGO AQUI
-
             }
         });
+    }
+    public void goToAddExpedient(View v){
+        Intent i = new Intent(this,ActivityMedical.class);
+        startActivity(i);
     }
     public void loadID(){
         SharedPreferences sharedPreferences =

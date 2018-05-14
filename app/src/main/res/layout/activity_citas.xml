@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.iteso.handdoctor.ActivityCitas">
+    tools:context="com.iteso.handdoctor.ActivityCitas"
+    android:padding="15dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -50,7 +51,8 @@
             android:text="20/09/2018"
             android:clickable="true"
             android:onClick="onClickDate"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"/>
 
         <!--
         <DatePicker
@@ -73,7 +75,8 @@
             android:text="12:00"
             android:clickable="true"
             android:onClick="onClickTime"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"/>
         <!--
         <TimePicker
             android:layout_width="wrap_content"

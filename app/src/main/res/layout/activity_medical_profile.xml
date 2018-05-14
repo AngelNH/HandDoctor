@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.iteso.handdoctor.ActivityMedicalProfile">
+    tools:context="com.iteso.handdoctor.ActivityMedicalProfile"
+    android:padding="15dp">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +25,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -44,7 +45,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -65,7 +66,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -85,7 +86,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -105,7 +106,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -125,7 +126,7 @@
             <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:layout_gravity="center">
             <TextView
                 android:layout_width="wrap_content"
@@ -145,7 +146,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -165,7 +166,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -185,7 +186,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -205,7 +206,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -226,7 +227,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -247,7 +248,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -268,7 +269,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -288,7 +289,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
@@ -307,6 +308,7 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+    <!--
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/activity_medical_profile_update"
         android:layout_width="wrap_content"
@@ -320,6 +322,7 @@
         app:fabSize="normal"
         app:rippleColor="#00FF00"
         app:useCompatPadding="false"/>
+        -->
 
 
 </android.support.design.widget.CoordinatorLayout>

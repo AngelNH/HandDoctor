@@ -45,38 +45,8 @@
                 map:fab_colorNormal="#b1b1b1"
                 map:fab_icon="@drawable/ic_contact_person"
                 map:fab_title="Dr. Hernandez"
-                android:visibility="visible"/>
-
-            <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/activity_maps_contact_b"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                map:fab_addButtonSize="mini"
-                map:fab_colorNormal="#b1b1b1"
-                map:fab_icon="@drawable/ic_contact_person"
-                map:fab_title="Dr. De Anda"
-                android:visibility="visible"/>
-
-            <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/activity_maps_contact_c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                map:fab_addButtonSize="mini"
-                map:fab_colorNormal="#b1b1b1"
-                map:fab_icon="@drawable/ic_contact_person"
-                map:fab_title="Dr. Gonzalez"
-                android:visibility="visible"/>
-
-            <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/activity_maps_contact_d"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                map:fab_addButtonSize="mini"
-                map:fab_colorNormal="#b1b1b1"
-                map:fab_icon="@drawable/ic_contact_person"
-                map:fab_title="Dr. Moreno"
-                android:visibility="visible"/>
-
+                android:visibility="visible"
+                android:onClick="goConsul"/>
 
         </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
